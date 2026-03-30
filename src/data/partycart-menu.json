@@ -1,0 +1,684 @@
+{
+  "menuCategories": [
+    {
+      "id": "kilo-kart",
+      "title": "Kilo Kart",
+      "emoji": "⚖️",
+      "outletName": "KiloKart",
+      "badge": "Most Popular",
+      "tagline": "Order everything by the kilo — feed a crowd without compromise",
+      "items": [
+        {
+          "name": "Chicken Seekh Kebab 1kg",
+          "price": 1400,
+          "isVeg": false,
+          "description": "Served with Mint Chutney, Tamarind Chutney, Onion & Cucumber Salad, Rumali Roti/Naan, and Lemon Wedges",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/23f28390-5cb4-11f0-aa53-ab8b35060ee7/Item_Resize/1e59e4b0-a8da-11f0-8f78-95ad1d875623/1e59e4b1-a8da-11f0-8f78-95ad1d875623"
+        },
+        {
+          "name": "Chicken Malai Kebab 1kg",
+          "price": 1400,
+          "isVeg": false,
+          "description": "Creamy, mildly spiced chicken marinated in cheese, cream, and cardamom. Mint Chutney, Tamarind Chutney, Onion & Cucumber Salad",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/23f28390-5cb4-11f0-aa53-ab8b35060ee7/Item_Resize/c8f32440-a8da-11f0-8f78-95ad1d875623/c8f32441-a8da-11f0-8f78-95ad1d875623"
+        },
+        {
+          "name": "Tandoori Chicken Tikka 1kg",
+          "price": 1400,
+          "isVeg": false,
+          "description": "Boneless chicken marinated in yogurt and spices, grilled to perfection",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/23f28390-5cb4-11f0-aa53-ab8b35060ee7/Item_Resize/5a3b5f30-a8db-11f0-8f78-95ad1d875623/5a3b5f31-a8db-11f0-8f78-95ad1d875623"
+        },
+        {
+          "name": "Pahadi Chicken Kebab 1kg",
+          "price": 1400,
+          "isVeg": false,
+          "description": "Boneless chicken marinated in yogurt and spices and grilled in Pahadi style",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/23f28390-5cb4-11f0-aa53-ab8b35060ee7/Item_Resize/d4718900-a8db-11f0-8f78-95ad1d875623/d4718901-a8db-11f0-8f78-95ad1d875623"
+        },
+        {
+          "name": "Mutton Seekh Kebab 1kg",
+          "price": 1900,
+          "isVeg": false,
+          "description": "Ground lamb seasoned with herbs and spices, skewered and grilled",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/23f28390-5cb4-11f0-aa53-ab8b35060ee7/Item_Resize/27d7c910-a8dc-11f0-8f78-95ad1d875623/27d7c911-a8dc-11f0-8f78-95ad1d875623"
+        },
+        {
+          "name": "Boti Kebab 1kg",
+          "price": 1800,
+          "isVeg": false,
+          "description": "Tender cubes of lamb marinated in spiced yogurt and grilled",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/23f28390-5cb4-11f0-aa53-ab8b35060ee7/Item_Resize/b1e37230-a8dc-11f0-8f78-95ad1d875623/b1e37231-a8dc-11f0-8f78-95ad1d875623"
+        },
+        {
+          "name": "Fish Amritsari Tikka – Murrel 1kg",
+          "price": 2200,
+          "isVeg": false,
+          "description": "Spicy marinated fish chunks, battered and grilled or fried"
+        },
+        {
+          "name": "Prawn Tandoori Kebab 1kg",
+          "price": 2200,
+          "isVeg": false,
+          "description": "Medium- to big-sized prawns marinated in a tangy mix of yogurt and spices, tandoor-cooked",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/23f28390-5cb4-11f0-aa53-ab8b35060ee7/Item_Resize/a74f8290-a8dd-11f0-8f78-95ad1d875623/a74fa9a0-a8dd-11f0-8f78-95ad1d875623"
+        },
+        {
+          "name": "Paneer Tikka 1kg",
+          "price": 1200,
+          "isVeg": true,
+          "description": "Cubes of paneer marinated in spiced yogurt, grilled with onions and peppers",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/23f28390-5cb4-11f0-aa53-ab8b35060ee7/Item_Resize/499ace10-a8e3-11f0-8f78-95ad1d875623/499af520-a8e3-11f0-8f78-95ad1d875623"
+        },
+        {
+          "name": "Hara Bhara Kebab 1kg",
+          "price": 1000,
+          "isVeg": true,
+          "description": "Spinach and green peas patties, mildly spiced and shallow fried"
+        },
+        {
+          "name": "Malai Broccoli 1kg",
+          "price": 1200,
+          "isVeg": true,
+          "description": "Tender broccoli florets marinated in a rich blend of cream, cheese, and aromatic spices, grilled to perfection",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/23f28390-5cb4-11f0-aa53-ab8b35060ee7/Item_Resize/58fe8ab0-a8e1-11f0-8f78-95ad1d875623/58fe8ab1-a8e1-11f0-8f78-95ad1d875623"
+        },
+        {
+          "name": "Desi Chicken 1kg",
+          "price": 1000,
+          "isVeg": false,
+          "description": "Fresh Cut 1kg Meat 750g — Served Gravy, Fry & Dry"
+        },
+        {
+          "name": "Mutton [Pottelu Mamsam] 1kg",
+          "price": 1250,
+          "isVeg": false,
+          "description": "Fresh Cut 1kg Meat 750g — Served with Gravy, Fry & Dry"
+        },
+        {
+          "name": "Chicken Biryani Handi For 30-35",
+          "price": 5500,
+          "isVeg": false,
+          "description": "Traditional wood-fired cooking"
+        },
+        {
+          "name": "Mutton Biryani Handi For 30-35",
+          "price": 9500,
+          "isVeg": false,
+          "description": "Traditional wood-fired cooking"
+        },
+        {
+          "name": "Gongura Mamsam Roast",
+          "price": 800,
+          "isVeg": false,
+          "description": "Tender mutton roasted with tangy Gongura (sorrel) leaves and Hyderabadi spices"
+        },
+        {
+          "name": "Natukodi Vepudu",
+          "price": 600,
+          "isVeg": false,
+          "description": "Country chicken dry fry, intensely spiced"
+        },
+        {
+          "name": "Royyala Vepudu",
+          "price": 1200,
+          "isVeg": false,
+          "description": "Prawns dry-fried with Andhra spices"
+        }
+      ]
+    },
+    {
+      "id": "telugu-ruchulu",
+      "title": "Telugu Ruchulu",
+      "emoji": "🍛",
+      "outletName": "Telugu Ruchulu",
+      "badge": "Must Try",
+      "tagline": "Authentic Telugu cuisine prepared by traditional chefs — flavours of home, scaled for your celebration",
+      "items": [
+        {
+          "name": "Pure Veg Andhra Bhojanam Box For 15-20",
+          "price": 6500,
+          "isVeg": true,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served with 3 Appetizers — Gobi 65, Thotakura Liver Fry, Punugulu. 5 Main Course — Gutthi Vankaya Curry, Tomato Pappu, Veg dishes. Rice & Rotis included.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/a5d23930-5cb1-11f0-aa53-ab8b35060ee7/Item_Resize/da66a2d0-fa81-11f0-bb0e-5fdd1b58b425/da66a2d1-fa81-11f0-bb0e-5fdd1b58b425"
+        },
+        {
+          "name": "Seema Non-Veg Celebration Box For 20",
+          "price": 10500,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served With 3 Appetizers — Kheema Balls Fry, Chicken Roast, Onion Pakodi. 4 Main Course — Rayalaseema Mutton Curry, Tomato Pappu and more.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/a5d23930-5cb1-11f0-aa53-ab8b35060ee7/Item_Resize/2254ca40-fa82-11f0-bb0e-5fdd1b58b425/2254ca41-fa82-11f0-bb0e-5fdd1b58b425"
+        },
+        {
+          "name": "Rayalaseema Ruchulu Feast Box For 20",
+          "price": 12500,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served With 3 Appetizers — Mamsam Vepudu, Kodi 65, Ponganalu with Coconut Chutney. 4 Main Course — Natu Kodi Pulusu, Mamsam and more.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/a5d23930-5cb1-11f0-aa53-ab8b35060ee7/Item_Resize/8a971e10-fa81-11f0-bb0e-5fdd1b58b425/8a974520-fa81-11f0-bb0e-5fdd1b58b425"
+        },
+        {
+          "name": "Andhra Spice Trail Box For 20",
+          "price": 8500,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served with 3 Appetizers — Jeedi Pappu Kodi Vepudu, Paneer 65, Mirchi Baji. Main Course — Kodi Kura, Gutthi Vankaya, Andhra style rice and rotis.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/a5d23930-5cb1-11f0-aa53-ab8b35060ee7/Item_Resize/ea831630-fa81-11f0-bb0e-5fdd1b58b425/ea831631-fa81-11f0-bb0e-5fdd1b58b425"
+        },
+        {
+          "name": "Coastal Andhra Delight Box For 20",
+          "price": 12000,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served with Royyala Vepudu, Jeedipappu Kodi Pakoda, Cut Mirchi Baji. Main Course — Royyala Iguru, Nellore Chepala Pulusu and more.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/a5d23930-5cb1-11f0-aa53-ab8b35060ee7/Item_Resize/35bc49f0-fa82-11f0-bb0e-5fdd1b58b425/35bc7100-fa82-11f0-bb0e-5fdd1b58b425"
+        },
+        {
+          "name": "Telangana Breakfast Brunch Feast Box For 20",
+          "price": 9500,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served with 2 Appetizers — Mirchi Bajji, Pungulu. 4 Main Course — Paya Curry/Gurda Fry, Kheema Pav/Chapati, Egg Curry and more.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/a5d23930-5cb1-11f0-aa53-ab8b35060ee7/Item_Resize/12e6e660-fa82-11f0-bb0e-5fdd1b58b425/12e6e661-fa82-11f0-bb0e-5fdd1b58b425"
+        },
+        {
+          "name": "Telugu Daru Party Box For 20",
+          "price": 14500,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served With Kodi Kura, Gutthi Vankaya Curry, Bagara Rice, Chapati & Double Ka Meetha",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/a5d23930-5cb1-11f0-aa53-ab8b35060ee7/Item_Resize/48b55060-fa82-11f0-bb0e-5fdd1b58b425/48b55061-fa82-11f0-bb0e-5fdd1b58b425"
+        },
+        {
+          "name": "Veg & Non Veg Combo 30 Members",
+          "price": 12000,
+          "isVeg": false,
+          "description": "Served With White Rice, Bagara Rice, Sambar, Pappu, Roti Chutney, Veg Fry, Veg Curry, Chicken Fry, Mutton Curry, Papad and more.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/a5d23930-5cb1-11f0-aa53-ab8b35060ee7/Item_Resize/069ba070-f82b-11f0-97a0-930099221e96/069bc780-f82b-11f0-97a0-930099221e96"
+        }
+      ]
+    },
+    {
+      "id": "mughlai-kitchens",
+      "title": "Mughlai Kitchens",
+      "emoji": "👑",
+      "outletName": "Mughlai PartyCart",
+      "badge": "Must Try",
+      "tagline": "Old City Khandani chefs — Mughlai grandeur for your celebration",
+      "items": [
+        {
+          "name": "Simple Chicken Biryani Combo Box For 15-20",
+          "price": 6800,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Experience the authentic taste of the Nizams. Rich Dum Ka Chicken gravy served with fragrant Biryani.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/1a159ab0-baf6-11f0-83f5-877378295a33/Item_Resize/08bce700-f6b0-11f0-99d1-d3300e81c57c/08bce701-f6b0-11f0-99d1-d3300e81c57c"
+        },
+        {
+          "name": "Nawabi Dawat Box For 20-25",
+          "price": 9500,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served With 3 Starters — Chicken 65, Mutton Shami, Veg Cutlet. 2 Gravies — Dum Ka Murgh, Shahi Paneer. Rice — Chicken Biryani.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/1a159ab0-baf6-11f0-83f5-877378295a33/Item_Resize/abdb6810-fa86-11f0-bb0e-5fdd1b58b425/abdb6811-fa86-11f0-bb0e-5fdd1b58b425"
+        },
+        {
+          "name": "Biryani & Meetha Party Box (Serves 15-20)",
+          "price": 2800,
+          "isVeg": false,
+          "description": "Traditional 4kg Chicken Biryani, cooked over a wood fire, with Double Ka Meetha dessert.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/1a159ab0-baf6-11f0-83f5-877378295a33/Item_Resize/f2afb9a0-025e-11f1-9b4a-e3018497cfbd/f2afb9a1-025e-11f1-9b4a-e3018497cfbd"
+        },
+        {
+          "name": "Chicken Biryani Handi For 30-35",
+          "price": 5500,
+          "isVeg": false,
+          "description": "Authentic Old City Wood-Fire Biryani served in a traditional handi, featuring 7.5kg meat and 6kg premium rice.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/1a159ab0-baf6-11f0-83f5-877378295a33/Item_Resize/80b718a0-f6b2-11f0-99d1-d3300e81c57c/80b718a1-f6b2-11f0-99d1-d3300e81c57c"
+        },
+        {
+          "name": "Mutton Biryani Handi For 30-35",
+          "price": 9500,
+          "isVeg": false,
+          "description": "Authentic Old City Wood-Fire Biryani served in a traditional handi, featuring 7.5kg meat and 6kg premium rice.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/1a159ab0-baf6-11f0-83f5-877378295a33/Item_Resize/dc146090-fa86-11f0-bb0e-5fdd1b58b425/dc146091-fa86-11f0-bb0e-5fdd1b58b425"
+        },
+        {
+          "name": "Charminar Breakfast Combo (Serve for 10)",
+          "price": 2900,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Tender Lamb Brain Fry paired with Spinach Gravy, served with 10 fresh Rotis and more.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/0d07cb00-a349-11f0-ad6a-9d62ece71b41/Item_Resize/8be22d40-f6b3-11f0-99d1-d3300e81c57c/8be22d41-f6b3-11f0-99d1-d3300e81c57c"
+        }
+      ]
+    },
+    {
+      "id": "nawabi-flavors",
+      "title": "Nawabi Flavors",
+      "emoji": "🏰",
+      "outletName": "Nawabi Flavors",
+      "badge": "Premium",
+      "tagline": "Royal Hyderabadi feasts — wood-fire biryanis served in traditional handis",
+      "items": [
+        {
+          "name": "Simple Mutton Biryani Combo For 15-20",
+          "price": 9500,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served With 1 Gravy — Dum Ka Chicken. Any 1 Rice — Mutton Dum Biryani / Sufiyani Mutton Biryani. Any 1 Bread — Rumali Roti.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/1a159ab0-baf6-11f0-83f5-877378295a33/5569728749c8a15e10a4bd308469b013.jpg"
+        },
+        {
+          "name": "Sufiyani Mutton Biryani For 30-35",
+          "price": 10000,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Traditional wood-fired cooking"
+        },
+        {
+          "name": "Zafrani Mutton Biryani Handi For 30-35",
+          "price": 10500,
+          "isVeg": false,
+          "description": "Traditional wood-fired cooking"
+        },
+        {
+          "name": "Mutton Mandi Handi For 20-25",
+          "price": 6500,
+          "isVeg": false,
+          "description": "Traditional wood-fired cooking",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/1a159ab0-baf6-11f0-83f5-877378295a33/5569728749c8a15e10a4bd308469b013.jpg"
+        },
+        {
+          "name": "Chicken Mandi Handi For 20-25",
+          "price": 4500,
+          "isVeg": false,
+          "description": "Traditional wood-fired cooking"
+        },
+        {
+          "name": "Hyderabadi Home Feast Box For 20-25",
+          "price": 9500,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served with 2 starters — Green Chicken, Mutton Lukmi. 2 Gravies — Chicken Korma, Dal Makhani. Any 1 Rice — Bagara Rice."
+        },
+        {
+          "name": "Royal Dawat-e-Seafood Box For 20-25",
+          "price": 11500,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served With 2 Starters — Fish Fry, Prawn Roast. 2 Gravies — Fish Curry Mughlai, Paneer Butter Masala. Rice — Prawn Biryani."
+        },
+        {
+          "name": "Dore ka Khana — The Royal Feast Box For 20-25",
+          "price": 13500,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served With 2 Starters — Patthar ka Gosht, Chicken Reshmi Kebab. 2 Gravies — Dum ka Murgh, Nalli Nihari. Rice — Chicken Biryani."
+        }
+      ]
+    },
+    {
+      "id": "godavari-ruchulu",
+      "title": "Godavari Ruchulu",
+      "emoji": "🐟",
+      "outletName": "Godavari Ruchulu",
+      "tagline": "Traditional Godavari-style home cooking — fresh, coastal, and deeply comforting",
+      "items": [
+        {
+          "name": "Vankaya Endu Nethallu Curry",
+          "price": 455,
+          "isVeg": false,
+          "description": "A rustic coastal dish where tender brinjals are cooked with flavorful dried anchovies; serves 4-5 members.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/04a66870-fb52-11f0-bb0e-5fdd1b58b425/Item_Resize/6b7b16d0-fce3-11f0-8092-cd89e93c9eae/6b7b3de0-fce3-11f0-8092-cd89e93c9eae"
+        },
+        {
+          "name": "Beerakaya Endu Royyalu",
+          "price": 650,
+          "isVeg": false,
+          "description": "Ridge gourd sautéed with sun-dried prawns, offering a unique savory seafood blend; serves 4-5 members.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/04a66870-fb52-11f0-bb0e-5fdd1b58b425/Item_Resize/85f5a750-fce3-11f0-8092-cd89e93c9eae/85f5a751-fce3-11f0-8092-cd89e93c9eae"
+        },
+        {
+          "name": "Gongura Pachi Royyalu",
+          "price": 780,
+          "isVeg": false,
+          "description": "1kg of fresh prawns cooked in a tangy, fiery paste made from iconic Andhra Sorrel leaves; serves 4-5 members."
+        },
+        {
+          "name": "Bendakaya Pachi Royyalu",
+          "price": 780,
+          "isVeg": false,
+          "description": "1kg of fresh prawns combined with okra and seasoned with local Godavari spices; serves 4-5 members.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/04a66870-fb52-11f0-bb0e-5fdd1b58b425/Item_Resize/b89bf650-fce3-11f0-8092-cd89e93c9eae/b89bf651-fce3-11f0-8092-cd89e93c9eae"
+        },
+        {
+          "name": "Vankaya Peethala Pulusu",
+          "price": 1430,
+          "isVeg": false,
+          "description": "1kg of succulent crabs and brinjals simmered together in a fragrant, tangy coastal tamarind stew."
+        },
+        {
+          "name": "Fish Mamidi Pulusu (Rohu)",
+          "price": 780,
+          "isVeg": false,
+          "description": "1kg of fresh Rohu fish cooked in a seasonal tangy gravy flavored with raw mango slices."
+        },
+        {
+          "name": "Pandugappa Eguru",
+          "price": 1430,
+          "isVeg": false,
+          "description": "1kg of premium Barramundi (Sea Bass) in a thick gravy, slow-cooked with a rich blend of Andhra chilies."
+        },
+        {
+          "name": "Bommidala Pulusu",
+          "price": 2600,
+          "isVeg": false,
+          "description": "1kg of the famous seasonal fresh-water mud fish served in a highly spiced, traditional tamarind broth."
+        },
+        {
+          "name": "Chinta Chiguru Pachi Royyalu",
+          "price": 780,
+          "isVeg": false,
+          "description": "Fresh prawns stir-fried with tender, young tamarind leaves — a sophisticated seasonal delicacy serving 3-4 members."
+        },
+        {
+          "name": "Fish Fry",
+          "price": 910,
+          "isVeg": false,
+          "description": "1.5kg of marinated fish steaks coated in spicy red chili rub and shallow-fried until crisp."
+        },
+        {
+          "name": "Egg Endu Chapa",
+          "price": 455,
+          "isVeg": false,
+          "description": "A unique combination featuring boiled eggs and dried fish in a thick, spicy gravy; serves 4-5 members."
+        },
+        {
+          "name": "Mutton Mulakkada",
+          "price": 1560,
+          "isVeg": false,
+          "description": "Tender mutton pieces slow-cooked with drumsticks to infuse the gravy with a sweet aroma; serves 4-5 members."
+        }
+      ]
+    },
+    {
+      "id": "dakhni-home-chefs",
+      "title": "Dakhni Home Chefs",
+      "emoji": "🥘",
+      "outletName": "Deccani Chef",
+      "badge": "Home-Style",
+      "tagline": "Traditional Hyderabadi Muslim home cooking — the most authentic Dakhni flavours, crafted in family kitchens",
+      "items": [
+        {
+          "name": "Dum Kart Special (Serve for 10)",
+          "price": 6000,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Dum Ka Chicken (semi-gravy), Rotis, Mutton Biryani, Raita, Mirchi Ka Salan & Rava Ka Meetha — the ultimate party platter.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/0d07cb00-a349-11f0-ad6a-9d62ece71b41/Item_Resize/73a40610-ae63-11f0-97a6-bd775c7a8294/73a40611-ae63-11f0-97a6-bd775c7a8294"
+        },
+        {
+          "name": "Roti & Paneer Party Box (Serve for 10)",
+          "price": 2800,
+          "isVeg": true,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Palak Paneer, Rotis (10), Aloo Cutlet, Veg Biryani & Kheer — a complete veg feast for your squad!",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/0d07cb00-a349-11f0-ad6a-9d62ece71b41/Item_Resize/dfba4fd0-ae63-11f0-97a6-bd775c7a8294/dfba4fd1-ae63-11f0-97a6-bd775c7a8294"
+        },
+        {
+          "name": "Kofta & Gosht Bash (Serve For 10)",
+          "price": 3000,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Mutton Kofta Biryani, Turai Gosht with Beerakaya, Rotis & Rawa Sweet — the ultimate feast for 10!",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/0d07cb00-a349-11f0-ad6a-9d62ece71b41/Item_Resize/b8724550-ae62-11f0-97a6-bd775c7a8294/b8724551-ae62-11f0-97a6-bd775c7a8294"
+        },
+        {
+          "name": "Kheema Biryani & Aloo Gosht Bash (Serve For 10)",
+          "price": 2800,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Spiced Kheema Biryani, rich Aloo Gosht, Rotis & a sweet ending with Kheer/Rawa ka Meetha for 10!",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/0d07cb00-a349-11f0-ad6a-9d62ece71b41/Item_Resize/22d90a50-ae63-11f0-97a6-bd775c7a8294/22d90a51-ae63-11f0-97a6-bd775c7a8294"
+        },
+        {
+          "name": "Shami Party Platter (Serve For 10)",
+          "price": 3200,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Juicy Mutton Shami, Rotis, Dupiyaza, finished with Kheer/Rawa Sweet — Serves 10 people."
+        },
+        {
+          "name": "Dawat-E-Nawab (Serve For 10)",
+          "price": 4400,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Kofte Ka Khorma, Tahari, Roti, Puran Poori, Shami — a royal Dakhni spread.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/0d07cb00-a349-11f0-ad6a-9d62ece71b41/Item_Resize/94b99790-abfa-11f0-97a6-bd775c7a8294/94b99791-abfa-11f0-97a6-bd775c7a8294"
+        },
+        {
+          "name": "Family Salan & Rice Feast (Serve for 10)",
+          "price": 2200,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Boti Ka Salan (goat intestine curry), Dalcha, Bagar Rice, Roti 10, Sem Ki Phalli ka Salan, Kheer.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/0d07cb00-a349-11f0-ad6a-9d62ece71b41/Item_Resize/00192130-ac0b-11f0-97a6-bd775c7a8294/00192131-ac0b-11f0-97a6-bd775c7a8294"
+        },
+        {
+          "name": "Old Hyderabad Boti Platter (Serve for 10)",
+          "price": 2600,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Boti Ka Salan, Dalcha, Bagar Rice, Roti 10, Samme Ki Phalli ka Salan, Kheer.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/0d07cb00-a349-11f0-ad6a-9d62ece71b41/Item_Resize/e62ac290-ae64-11f0-97a6-bd775c7a8294/e62ac291-ae64-11f0-97a6-bd775c7a8294"
+        },
+        {
+          "name": "Charminar Breakfast Combo 2 (Serve for 10)",
+          "price": 2500,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Gurda Fry (lamb kidney), Roti Atta 10 qty, Palak Ka Salan (thotakura), and Kheer.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/0d07cb00-a349-11f0-ad6a-9d62ece71b41/Item_Resize/ca89efa0-ae66-11f0-97a6-bd775c7a8294/ca89efa1-ae66-11f0-97a6-bd775c7a8294"
+        }
+      ]
+    },
+    {
+      "id": "rayalaseema-ruchulu",
+      "title": "Rayalaseema Ruchulu",
+      "emoji": "🌶️",
+      "outletName": "Meat-up",
+      "tagline": "Rustic, bold, deeply rooted — Rayalaseema specialties by chefs from the region",
+      "items": [
+        {
+          "name": "Family Feast Combo For 10 Members",
+          "price": 5000,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served with 1kg Mutton Gravy (Potel Mamsam), 1kg Desi Chicken Gravy, 1kg Chicken Fry, 10 Boiled Eggs, 1 Pack Bagara Rice.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/52d111a0-5cb3-11f0-aa53-ab8b35060ee7/Item_Resize/673def10-fa82-11f0-bb0e-5fdd1b58b425/673e1620-fa82-11f0-bb0e-5fdd1b58b425"
+        },
+        {
+          "name": "Spicy Mutton Treat for the Squad",
+          "price": 4500,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served with 1kg Mutton (Potel Mamsam), Talakayakura, Pava, 2 Pack Bagara Rice, 1 PachiPulusu & 10 Jowar Rotis.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/52d111a0-5cb3-11f0-aa53-ab8b35060ee7/Item_Resize/79f35cd0-fa82-11f0-bb0e-5fdd1b58b425/79f35cd1-fa82-11f0-bb0e-5fdd1b58b425"
+        },
+        {
+          "name": "Party Time Combo for 20 Members",
+          "price": 8200,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served with 2kg Mutton Gravy, 2kg Desi Chicken Gravy, 20 Boiled Eggs, 2 Pack Bagara Rice (Basmati), 2 pack Sona Masuri rice."
+        }
+      ]
+    },
+    {
+      "id": "home-kitchens",
+      "title": "Home Kitchens",
+      "emoji": "🏠",
+      "outletName": "Home Kitchen",
+      "tagline": "Curated home chefs preparing specialty dishes and regional favourites with love and authenticity",
+      "items": [
+        {
+          "name": "Veg Home Food Combo",
+          "price": 140,
+          "isVeg": true,
+          "ribbon": "Minimum 20 | Maximum 50",
+          "description": "Wholesome, homemade-style vegetarian meal, perfect for gatherings. Includes Bagara rice, white rice, Parmannam, Tomato Pachadi, Aalu Tomato, Curry Kothimeera Pachadi, curd, and sweet. Cooked fresh with minimal oil and spices.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/9c499a40-582c-11f0-a934-c308dc7ccb06/Item_Resize/6873f8e0-5972-11f0-a1d8-a3ad926f4323/6873f8e1-5972-11f0-a1d8-a3ad926f4323"
+        }
+      ]
+    },
+    {
+      "id": "corporate-bites",
+      "title": "Corporate Bites",
+      "emoji": "🏢",
+      "outletName": "Corporate Bites",
+      "tagline": "Perfect for office gatherings, meetings, and professional events",
+      "items": [
+        {
+          "name": "Classic Brunch Spread Box For 15-20",
+          "price": 4800,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served With Belgian Waffles with Nutella, Scrambled and masala eggs with buttered pav, Chicken sausages and hash browns, Fresh fruit platter.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/6f310a10-5d5a-11f0-90b1-d5e84dccc451/Item_Resize/fc250d90-fa80-11f0-bb0e-5fdd1b58b425/fc250d91-fa80-11f0-bb0e-5fdd1b58b425"
+        },
+        {
+          "name": "Executive Wrap & Sandwich Box For 10",
+          "price": 3100,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Packed with love, tied with a ribbon. Choice of one veg or non-veg dish for 10, served with creamy coleslaw, crispy pita chips.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/6f310a10-5d5a-11f0-90b1-d5e84dccc451/Item_Resize/20442f30-fa81-11f0-bb0e-5fdd1b58b425/20442f31-fa81-11f0-bb0e-5fdd1b58b425"
+        },
+        {
+          "name": "The Burger Session",
+          "price": 3100,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Tasty burger treat boxes perfect for 10 members! Pick any veg or non-veg burger, served fresh with crisp salad.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/6f310a10-5d5a-11f0-90b1-d5e84dccc451/Item_Resize/336f4220-fa81-11f0-bb0e-5fdd1b58b425/336f4221-fa81-11f0-bb0e-5fdd1b58b425"
+        },
+        {
+          "name": "Meal in a Bowl For 10",
+          "price": 3999,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "A two-compartment box for an organized and enjoyable meal.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/6f310a10-5d5a-11f0-90b1-d5e84dccc451/Item_Resize/24d7ea40-a370-11f0-ad6a-9d62ece71b41/24d7ea41-a370-11f0-ad6a-9d62ece71b41"
+        },
+        {
+          "name": "Salads For 10",
+          "price": 3800,
+          "isVeg": true,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Dressings are provided separately to be mixed just before enjoying, ensuring every bite is deliciously perfect.",
+          "imageUrl": "https://listing.sgp1.digitaloceanspaces.com/outlet_images/6f310a10-5d5a-11f0-90b1-d5e84dccc451/Item_Resize/dd4078e0-a370-11f0-ad6a-9d62ece71b41/dd4078e1-a370-11f0-ad6a-9d62ece71b41"
+        },
+        {
+          "name": "Executive Brunch Box For 15-20",
+          "price": 6200,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served with Belgian Waffles bar with multiple toppings, Chicken Kheema Pav, Anda Bhurji Buns, Assorted samosas and more."
+        },
+        {
+          "name": "Crowd Pleasers [20-25 Pieces]",
+          "price": 4200,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served with Schezwan Chicken Wings, Chicken Haleem Bites, Chicken & Cheese Spring Rolls, Loaded Nachos, Fish and Chips."
+        },
+        {
+          "name": "Asian Fusion [30 pieces]",
+          "price": 3800,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Served with Veg Dimsums (15 pieces), Chicken Dimsums (15 pieces), Assorted Samosas, Spicy cilantro oil dipping sauce."
+        },
+        {
+          "name": "Gourmet Mains Box For 15-20",
+          "price": 7800,
+          "isVeg": false,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "Pesto Cottage Cheese Steaks, Herb-marinated Grilled Chicken with mushroom jus, served with creamy mash and vibrant herbed sides."
+        },
+        {
+          "name": "Premium Dessert Box For 15-20",
+          "price": 10500,
+          "isVeg": true,
+          "ribbon": "Minimum 1 | Maximum 3",
+          "description": "A lavish spread of gourmet desserts: cheesecakes, tiramisu cups, fruit parfaits, and artisanal chocolates. Pure indulgence."
+        }
+      ]
+    },
+    {
+      "id": "grazing-tables",
+      "title": "Grazing Tables",
+      "emoji": "🌿",
+      "outletName": "Grazing Table",
+      "tagline": "Beautifully curated grazing table setups — a feast for the eyes and the palate",
+      "idealFor": ["Birthdays & baby showers", "House parties", "Corporate events"],
+      "items": []
+    },
+    {
+      "id": "ankapur-chicken",
+      "title": "Ankapur Style Chicken",
+      "emoji": "🔥",
+      "badge": "Cult Favourite",
+      "tagline": "Famous Ankapur country-style chicken — cooked in authentic rural tradition over wood fire",
+      "items": [
+        {
+          "name": "Ankapur Natu Kodi",
+          "price": null,
+          "isVeg": false,
+          "description": "Free-range Natu Kodi (country chicken) cooked over wood fire with local spices. Dry, charred, intensely flavoured preparation — a cult favourite across Hyderabad."
+        }
+      ]
+    },
+    {
+      "id": "live-coffee-mocktail",
+      "title": "Live Coffee & Mocktail Counters",
+      "emoji": "☕",
+      "tagline": "Elevate your party with live beverage counters — freshly brewed, crafted on the spot, served with flair",
+      "sections": [
+        {
+          "name": "Coffee Counter",
+          "items": ["Espresso", "Cappuccino", "Latte", "Filter Coffee", "Cold Brew", "Frappes"]
+        },
+        {
+          "name": "Mocktail Counter",
+          "items": ["Virgin Mojito", "Blue Lagoon", "Shirley Temple", "Seasonal Coolers", "Custom Blends"]
+        }
+      ],
+      "items": []
+    },
+    {
+      "id": "live-kebabs-counters",
+      "title": "Live Food Counters",
+      "emoji": "🍢",
+      "tagline": "Professional chefs cooking live at your event — the ultimate crowd-pleaser",
+      "sections": [
+        {
+          "name": "Live Kebabs on Coal Sigdi",
+          "description": "Seekh kebabs, boti, and grilled meats cooked live — smoky aroma, charred perfection"
+        },
+        {
+          "name": "Podis & Ghee Rice Counter",
+          "description": "Aromatic ghee rice served with a spread of Andhra podis"
+        },
+        {
+          "name": "Indo-Chinese Wok",
+          "description": "Live wok-tossed noodles, stir-fries, manchurias and momos"
+        }
+      ],
+      "items": []
+    }
+  ]
+}

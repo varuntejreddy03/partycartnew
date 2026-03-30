@@ -1,0 +1,433 @@
+{
+  "brand": {
+    "name": "PartyCart",
+    "tagline": "Hyderabad's Party Food App",
+    "subtitle": "Authentic chefs. Curated menus. Delivered to your celebration.",
+    "description": "No kitchen chaos. No last-minute catering stress. Just handcrafted food — delivered fresh to your party.",
+    "parent": "Yumzy",
+    "city": "Hyderabad"
+  },
+
+  "about": {
+    "headline": "What is PartyCart by Yumzy?",
+    "body": "PartyCart is Hyderabad's first curated party catering platform — connecting hosts with the city's most authentic chefs, home kitchens, Khandani Bawarchis, and specialty culinary experts.",
+    "highlights": [
+      {
+        "title": "Signature Dishes",
+        "description": "Iconic recipes crafted by the chefs who mastered them."
+      },
+      {
+        "title": "Regional Cuisines",
+        "description": "From Mughlai to Telugu — every tradition covered."
+      },
+      {
+        "title": "Zero Vendor Chaos",
+        "description": "One platform. Multiple chefs. Seamless delivery."
+      }
+    ]
+  },
+
+  "differentiators": {
+    "headline": "How We're Different",
+    "body": "Unlike regular cloud kitchens or aggregator apps, PartyCart is designed only for parties and events.",
+    "points": [
+      {
+        "title": "Pre-Booked Catering Orders",
+        "description": "Curated, planned, and confirmed — no last-minute surprises."
+      },
+      {
+        "title": "Authentic Chef Partners",
+        "description": "Local specialty kitchens and traditional culinary experts only."
+      },
+      {
+        "title": "Strict Quality Benchmarks",
+        "description": "Hygiene, consistency, and presentation — always maintained."
+      },
+      {
+        "title": "End-to-End Logistics",
+        "description": "We manage kitchen coordination, packaging, and delivery."
+      }
+    ],
+    "cta": "You focus on your guests. We take care of the food."
+  },
+
+  "promise": {
+    "headline": "Our Promise",
+    "body": "Every chef and kitchen onboarded to PartyCart is rigorously vetted. We ensure uncompromising quality standards for your celebration.",
+    "pillars": [
+      {
+        "title": "Hygiene & Safety",
+        "description": "Strict food safety standards at every kitchen."
+      },
+      {
+        "title": "Chef Professionalism",
+        "description": "Reliable, experienced, and vetted culinary talent."
+      },
+      {
+        "title": "Portioning, Defined with Every Chef",
+        "description": "PartyCart works with every chef to define exact portions upfront — so your guests are always well-fed, every time."
+      },
+      {
+        "title": "Premium Packaging",
+        "description": "Proper portioning, presentation, and packaging always."
+      }
+    ]
+  },
+
+  "offerings": [
+    {
+      "id": "party-boxes",
+      "title": "Party Boxes",
+      "description": "Curated ready-to-serve meal boxes designed for intimate gatherings and small celebrations.",
+      "type": "product",
+      "idealFor": "10+ Guests",
+      "features": [
+        "Right-sized portions for small parties",
+        "Complete balanced menus — starter to sweet",
+        "Minimal setup with zero kitchen effort needed"
+      ]
+    },
+    {
+      "id": "catering-orders",
+      "title": "Catering Orders",
+      "description": "Freshly prepared food delivered in premium hotbox trays — hot, fresh, and ready to serve the moment it arrives.",
+      "type": "product",
+      "idealFor": "50+ guests",
+      "useCases": [
+        "Wedding functions",
+        "Corporate events",
+        "Large house parties"
+      ],
+      "features": [
+        "Wide menu selection across cuisines",
+        "Hot, fresh delivery in insulated trays",
+        "Coordinated delivery timing",
+        "Premium presentation standards"
+      ]
+    },
+    {
+      "id": "live-food-counters",
+      "title": "Live Food Counters",
+      "description": "Professional chefs cooking live at your event — the ultimate crowd-pleaser for any celebration.",
+      "type": "product",
+      "idealFor": "House parties, special occasions, and corporate events",
+      "counters": [
+        {
+          "name": "Kebabs & Grills",
+          "description": "Seekh kebabs, boti, and grilled meats cooked live on a coal sigdi — smoky aroma, charred perfection, and fresh off the grill straight to your guests."
+        },
+        {
+          "name": "Podis & Ghee Rice Counter",
+          "description": "Aromatic ghee rice served with a spread of Andhra podis — simple, soulful, and irresistibly fragrant."
+        },
+        {
+          "name": "Indo-Chinese Wok",
+          "description": "Live wok-tossed noodles, stir-fries, manchurias and momos — bold Indo-Chinese flavours cooked fresh at your event."
+        },
+        {
+          "name": "Salad Bar",
+          "description": "Fresh, customisable salad stations — a refreshing addition to any party spread."
+        }
+      ]
+    }
+  ],
+
+  "signatureCategories": [
+    {
+      "id": "kebabs-biryanis",
+      "title": "Kebabs & Biryanis",
+      "description": "The heart of every Hyderabadi celebration — signature kebabs and aromatic biryanis curated for parties.",
+      "note": "Delivered with disposable grills so you can heat kebabs live and create an authentic experience for your guests.",
+      "items": [
+        {
+          "name": "Signature Kebabs",
+          "description": "Seekh, Shami, Patta ka Gosh, Soya Chap — the classics, done right."
+        },
+        {
+          "name": "Party Biryanis",
+          "description": "Dum-cooked, layered, and fragrant — served by the kilo."
+        },
+        {
+          "name": "Grill Experience",
+          "description": "Disposable grills delivered — recreate the live feel at home."
+        }
+      ]
+    },
+    {
+      "id": "kilo-kart",
+      "title": "Kilo Kart",
+      "description": "Order everything by the kilo — the simplest way to feed a large crowd without compromise.",
+      "note": "Kilo Kart is perfect for large gatherings where variety and volume both matter.",
+      "items": [
+        { "name": "Kebabs by Kilo" },
+        { "name": "Biryanis by Kilo" },
+        { "name": "Curries by Kilo" },
+        { "name": "Appetisers by Kilo" },
+        { "name": "Sweets & Desserts" }
+      ]
+    },
+    {
+      "id": "telugu-ruchulu",
+      "title": "Telugu Ruchulu",
+      "description": "Authentic Telugu cuisine prepared by traditional Telugu chefs — the flavours of home, scaled for your celebration.",
+      "highlights": [
+        {
+          "name": "Traditional Recipes",
+          "description": "Time-honoured family recipes passed down through generations."
+        },
+        {
+          "name": "Regional Authenticity",
+          "description": "Chefs who grew up cooking these dishes — it shows in every bite."
+        }
+      ]
+    },
+    {
+      "id": "rayalaseema-ruchulu",
+      "title": "Rayalaseema Ruchulu",
+      "description": "Rustic, bold, and deeply rooted — Rayalaseema specialties brought to your party by chefs from the region.",
+      "signatureDishes": [
+        {
+          "name": "Ragi Sangati",
+          "description": "Wholesome finger millet staple — comfort food at its finest."
+        },
+        {
+          "name": "Natu Kodi Pulusu",
+          "description": "Country chicken in a tangy, spiced gravy — intensely flavourful."
+        },
+        {
+          "name": "Pulagam",
+          "description": "Traditional lentil and rice dish — simple, nourishing, delicious."
+        },
+        {
+          "name": "Pachipulusu",
+          "description": "Raw tamarind rasam — a sharp, refreshing regional classic."
+        }
+      ]
+    },
+    {
+      "id": "mughlai-kitchens",
+      "title": "Mughlai Kitchens",
+      "description": "Old City Khandani chefs bringing the grandeur of Mughlai cooking to your celebration.",
+      "note": "These are recipes perfected over generations in Hyderabad's Old City — rich, aromatic, and unmistakably royal. Biryanis served in traditional hundis for full theatrical presentation.",
+      "signatureDishes": [
+        "Khandani Biryani in traditional hundis",
+        "Murgh Musallam & Shahi Korma",
+        "Authentic Nihari & slow-cooked stews",
+        "Royal Mughlai kebab platters"
+      ]
+    },
+    {
+      "id": "godavari-ruchulu",
+      "title": "Godavari Ruchulu",
+      "description": "Traditional Godavari-style home cooking by regional home chefs — fresh, coastal, and deeply comforting.",
+      "signatureDishes": [
+        "Endu Nethala Kura",
+        "Bheera Kaya Endu Royyalu",
+        "Benda Kaya Pachi Royyalu",
+        "Egg Endu Chepa",
+        "Vankaya Peetala Pulusu",
+        "Chepa Mamidi Pulusu",
+        "Pandu Gappa Iguru"
+      ]
+    },
+    {
+      "id": "ankapur-chicken",
+      "title": "Ankapur Style Chicken",
+      "description": "Famous Ankapur country-style chicken — cooked in authentic rural tradition over wood fire.",
+      "note": "Ankapur chicken is one of the most requested dishes at PartyCart events. The rustic flavour creates instant conversation.",
+      "highlights": [
+        "Free-range Natu Kodi (country chicken)",
+        "Cooked over wood fire with local spices",
+        "Dry, charred, intensely flavoured preparation",
+        "A cult favourite across Hyderabad"
+      ]
+    },
+    {
+      "id": "home-kitchens",
+      "title": "Home Kitchens",
+      "description": "Curated home chefs preparing specialty dishes and regional favourites with love, skill, and authenticity.",
+      "highlights": [
+        {
+          "name": "Regional Specialists",
+          "description": "Each chef is a master of their own regional cuisine."
+        },
+        {
+          "name": "Made With Care",
+          "description": "Home kitchens bring warmth and personal attention to every dish."
+        },
+        {
+          "name": "Unique Flavours",
+          "description": "Dishes you won't find in any restaurant — only in PartyCart."
+        }
+      ]
+    },
+    {
+      "id": "dakhni-home-chefs",
+      "title": "Dakhni Home Chefs",
+      "description": "Traditional Hyderabadi Muslim home cooking — the most authentic Dakhni flavours, crafted in family kitchens.",
+      "signatureDishes": [
+        {
+          "name": "Nihari & Chaps",
+          "description": "Slow-cooked overnight — rich, gelatinous, and deeply spiced."
+        },
+        {
+          "name": "Mutton Kofta",
+          "description": "Bold, rustic mutton preparation with deep Dakhni spice — a true crowd favourite."
+        },
+        {
+          "name": "Kheema Biryani",
+          "description": "Minced mutton layered with fragrant rice — a hearty Dakhni classic."
+        },
+        {
+          "name": "Mutton Shami",
+          "description": "Silky, melt-in-the-mouth mutton shami kebabs — a Dakhni classic."
+        },
+        {
+          "name": "Turai Gosht",
+          "description": "Tender mutton slow-cooked with ridge gourd in traditional Dakhni spices."
+        }
+      ]
+    },
+    {
+      "id": "corporate-bites-daru-party",
+      "title": "Corporate Bites & Daru Party Menus",
+      "sections": [
+        {
+          "id": "corporate-bites",
+          "name": "Corporate Bites",
+          "description": "Perfect for office gatherings and professional meetings.",
+          "items": [
+            "Sandwiches & Rolls",
+            "Pizzas & Burgers",
+            "Salads & Platters",
+            "Grilled Chicken",
+            "Grilled Fish"
+          ]
+        },
+        {
+          "id": "daru-party",
+          "name": "Daru Party Menus",
+          "description": "Specially curated for house parties and drinking gatherings. More appetisers. Less heavy mains. Perfectly balanced for a great evening."
+        }
+      ]
+    },
+    {
+      "id": "grazing-tables-live-kebabs",
+      "title": "Grazing Tables & Live Kebabs",
+      "description": "Two of PartyCart's most visually stunning and crowd-pleasing offerings.",
+      "sections": [
+        {
+          "id": "grazing-tables",
+          "name": "Grazing Tables",
+          "description": "Beautifully curated grazing table setups — a feast for the eyes and the palate.",
+          "idealFor": ["Birthdays & baby showers", "House parties", "Corporate events"]
+        },
+        {
+          "id": "live-kebabs",
+          "name": "Live Kebabs",
+          "description": "Freshly grilled kebabs cooked live on coal shigdi at your location. Authentic taste. Smoky aroma. Perfect party energy — guests love the experience."
+        }
+      ]
+    },
+    {
+      "id": "live-coffee-mocktail",
+      "title": "Live Coffee & Mocktail Counters",
+      "description": "Elevate your party experience with live beverage counters — freshly brewed, crafted on the spot, and served with flair.",
+      "sections": [
+        {
+          "id": "coffee-counter",
+          "name": "Coffee Counter",
+          "description": "Freshly brewed to order — the perfect companion for any celebration.",
+          "items": [
+            { "category": "Hot Brews", "examples": ["Espresso", "Cappuccino", "Latte", "Filter Coffee"] },
+            { "category": "Cold Brews", "examples": ["Smooth, slow-steeped cold coffee served chilled"] },
+            { "category": "Frappes", "examples": ["Thick, creamy blended coffee drinks"] }
+          ]
+        },
+        {
+          "id": "mocktail-counter",
+          "name": "Mocktail Counter",
+          "description": "Vibrant, refreshing mocktails crafted live — zero alcohol, full flavour.",
+          "items": [
+            { "category": "Signature Mocktails", "examples": ["Virgin Mojito", "Blue Lagoon", "Shirley Temple"] },
+            { "category": "Seasonal Coolers", "examples": ["Fresh fruit-based drinks made to order"] },
+            { "category": "Custom Blends", "examples": ["Guests can pick their own flavour combinations"] }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "howItWorks": {
+    "headline": "Ready to Plan Your Party?",
+    "subtext": "Let PartyCart handle the food while you enjoy every moment with your guests.",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Browse & Choose",
+        "description": "Explore menus from Hyderabad's best chefs and kitchens."
+      },
+      {
+        "step": 2,
+        "title": "Customise Your Order",
+        "description": "Pick dishes, quantities, and delivery timing for your event."
+      },
+      {
+        "step": 3,
+        "title": "We Coordinate",
+        "description": "PartyCart manages logistics, packaging, and quality checks."
+      },
+      {
+        "step": 4,
+        "title": "Fresh Delivery",
+        "description": "Hot, authentic food arrives at your celebration — right on time."
+      }
+    ]
+  },
+
+  "chefOnboarding": {
+    "headline": "Are You a Chef? Join PartyCart",
+    "body": "PartyCart is always looking for talented chefs, home cooks, and culinary specialists to join our growing platform. Bring your recipes to Hyderabad's biggest parties.",
+    "whoCanOnboard": [
+      "Home Chefs & Home Kitchens",
+      "Khandani Bawarchis & Traditional Cooks",
+      "Regional Cuisine Specialists",
+      "Live Counter & Catering Experts",
+      "Bakeries, Dessert & Snack Makers"
+    ],
+    "steps": [
+      { "step": 1, "title": "Register", "description": "Fill out a simple onboarding form" },
+      { "step": 2, "title": "Verification", "description": "Our team reviews your profile & cuisine" },
+      { "step": 3, "title": "Menu Setup", "description": "We help you list your signature dishes" },
+      { "step": 4, "title": "Go Live", "description": "Start receiving party orders on PartyCart" }
+    ],
+    "contact": {
+      "email": "chefs@partycart.in",
+      "whatsapp": "+91 73967 37700"
+    }
+  },
+
+  "contact": {
+    "phone": "+91 73967 37700",
+    "email": "hello@partycart.in",
+    "whatsapp": "+91 73967 37700",
+    "instagram": "@partycarthyderabad",
+    "website": "www.partycart.in"
+  },
+
+  "app": {
+    "headline": "Download the App",
+    "description": "Browse menus, book chefs, and track your order — all in one place.",
+    "platforms": ["App Store", "Google Play"]
+  },
+
+  "footer": {
+    "tagline": "Hyderabad's most authentic party catering platform — bringing the city's best chefs directly to your celebration.",
+    "stats": [
+      { "label": "Cuisine Categories", "description": "Regional and specialty menus for every palate." },
+      { "label": "Chef Partners", "description": "Vetted, authentic, and passionate about food." },
+      { "label": "Quality Assured", "description": "Every order meets restaurant-grade standards." }
+    ],
+    "closingLine": "From intimate gatherings of 10 to grand celebrations of 500+, PartyCart delivers food made by the chefs who do it best."
+  }
+}
