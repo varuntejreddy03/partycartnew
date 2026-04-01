@@ -1,158 +1,111 @@
-import { useState, useEffect, useCallback } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "@/assets/partycart-logo.png";
-import { Menu, X } from "lucide-react";
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, Instagram, Facebook } from 'lucide-react';
+import logo from '../assets/partycart-logo.png';
 
-const HomeIcon = ({ active }: { active: boolean }) => (
-  <svg viewBox="0 0 24 24" className={`h-[18px] w-[18px] ${active ? "text-[#C8920A]" : "text-[#7a6340]"}`} fill="none" aria-hidden="true">
-    <path d="M3 10.5L12 3l9 7.5" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M5.5 9.5V20h13V9.5" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const navLinks = [
+  { name: 'Cuisines', href: '#cuisines' },
+  { name: 'Services', href: '#services' },
+  { name: 'How it Works', href: '#how-it-works' },
+];
 
-const MenuIcon = ({ active }: { active: boolean }) => (
-  <svg viewBox="0 0 24 24" className={`h-[18px] w-[18px] ${active ? "text-[#C8920A]" : "text-[#7a6340]"}`} fill="none" aria-hidden="true">
-    <path d="M4 7h16" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" />
-    <path d="M4 12h16" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" />
-    <path d="M4 17h10" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" />
-  </svg>
-);
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
-const CallIcon = () => (
-  <svg viewBox="0 0 24 24" className="h-[18px] w-[18px] text-[#7a6340]" fill="none" aria-hidden="true">
-    <path d="M5 4h4l1.5 4-2.3 2.2a15.2 15.2 0 0 0 5.6 5.6l2.2-2.3L20 15v4a2 2 0 0 1-2.2 2A17 17 0 0 1 3 6.2 2 2 0 0 1 5 4Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const Navbar = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState(location.pathname === "/order" ? "order" : "home");
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const isHomeTop = location.pathname === "/" && !scrolled;
-  const isHome = location.pathname === "/";
-  const isOrder = location.pathname === "/order";
-
-  const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 50);
-  }, []);
-
-  useEffect(() => {
-    let ticking = false;
-    const onScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [handleScroll]);
-
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [location.pathname]);
-
-  const handleAppDownload = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const ua = navigator.userAgent.toLowerCase();
-    const isIOS = /iphone|ipad|ipod/.test(ua);
-    if (isIOS) {
-      window.open("https://apps.apple.com/in/app/yumzy-online-food-delivery/id1476665049", "_blank", "noopener,noreferrer");
-    } else {
-      window.open("https://play.google.com/store/apps/details?id=com.yumzy.orderfood", "_blank", "noopener,noreferrer");
-    }
+  const handleOrder = () => {
+    window.location.href = "https://yumzy.page.link/UfaY";
   };
 
   return (
     <>
-      <nav
-        className={`navbar fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 py-3"
-            : "bg-white/90 backdrop-blur-sm border-b border-gray-100 py-4"
-        }`}
-      >
-        <div className="container mx-auto px-4 flex items-center justify-between">
-          <Link to="/" className="flex-shrink-0" aria-label="Go to home">
-            <img
-              src={logo}
-              alt="PartyCart by Yumzy"
-              className="h-10 md:h-12 w-auto object-contain flex-shrink-0"
-              style={{ filter: 'brightness(0)' }}
-            />
-          </Link>
-
-          <div className="hidden md:flex items-center gap-8">
-            <Link to="/order" className="font-body text-[15px] font-medium text-dark hover:text-gold transition-colors">Browse Menu</Link>
-            <a href="#how-it-works" className="font-body text-[15px] font-medium text-dark hover:text-gold transition-colors">How It Works</a>
-            <a href="#contact" className="font-body text-[15px] font-medium text-dark hover:text-gold transition-colors">Contact Us</a>
+      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-ink/90 border-b border-gold/10 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+          {/* Logo */}
+          <div className="cursor-pointer flex items-center h-full py-4">
+            <img src={logo} alt="PartyCart" className="w-32 sm:w-40 h-auto object-contain" />
           </div>
 
-          <div className="hidden md:flex items-center gap-6">
-            <a href="tel:+917396737700" className="flex items-center gap-2 font-body text-[15px] font-medium text-dark hover:text-gold transition-colors">
-              <CallIcon />
-              <span>+91 73967 37700</span>
-            </a>
-            <a href="#" onClick={handleAppDownload} className="font-body text-[15px] font-medium text-gold hover:text-gold-light transition-colors">
-              Download App
-            </a>
-            <Link
-              to="/order"
-              className="inline-flex items-center justify-center rounded-lg px-8 py-3.5 font-body text-base font-bold bg-[#A8843A] text-white hover:bg-[#8B6A1D] transition-colors shadow-sm"
-              aria-label="Order Now"
-            >
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="relative font-sans text-muted hover:text-gold transition-colors py-2"
+                onMouseEnter={() => setHoveredLink(link.name)}
+                onMouseLeave={() => setHoveredLink(null)}
+              >
+                {link.name}
+                {hoveredLink === link.name && (
+                  <motion.div
+                    layoutId="underline"
+                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-gold"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                  />
+                )}
+              </a>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="hidden md:block">
+            <button onClick={handleOrder} className="bg-gold text-ink font-sans font-medium px-6 py-2 rounded-sm hover-sweep transition-transform">
               Order Now
-            </Link>
-          </div>
-
-          <div className="md:hidden flex items-center gap-3">
-            <button 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-[#1A1A1A] p-2 focus:outline-none"
-              aria-label="Toggle mobile menu"
-            >
-              {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
-        </div>
 
-        {/* Mobile menu dropdown */}
-        <div 
-          className={`md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-lg overflow-hidden transition-all duration-300 ${
-            mobileMenuOpen ? "max-h-[400px] py-4" : "max-h-0 py-0"
-          }`}
-        >
-          <div className="container mx-auto px-4 flex flex-col gap-4">
-            <Link onClick={() => setMobileMenuOpen(false)} to="/order" className="font-body text-base font-medium text-dark hover:text-gold transition-colors py-2 border-b border-gray-50">Browse Menu</Link>
-            <a onClick={() => setMobileMenuOpen(false)} href="#how-it-works" className="font-body text-base font-medium text-dark hover:text-gold transition-colors py-2 border-b border-gray-50">How It Works</a>
-            <a onClick={() => setMobileMenuOpen(false)} href="#contact" className="font-body text-base font-medium text-dark hover:text-gold transition-colors py-2 border-b border-gray-50">Contact Us</a>
-            <a onClick={() => setMobileMenuOpen(false)} href="tel:+917396737700" className="flex items-center gap-2 font-body text-base font-medium text-dark hover:text-gold transition-colors py-2 border-b border-gray-50">
-              <CallIcon />
-              <span>+91 73967 37700</span>
-            </a>
-            <a href="#" onClick={(e) => { setMobileMenuOpen(false); handleAppDownload(e); }} className="font-body text-base font-medium text-gold hover:text-gold-light transition-colors py-2">
-              Download App
-            </a>
-          </div>
+          {/* Mobile Menu Toggle */}
+          <button
+            className="md:hidden text-cream p-2 outline-none focus:outline-none focus:ring-0 active:outline-none rounded-md"
+            style={{ WebkitTapHighlightColor: 'transparent' }}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </nav>
 
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 p-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
-        <Link
-          to="/order"
-          className="flex w-full items-center justify-center rounded-xl bg-[#A8843A] px-4 py-3.5 font-body text-[15px] font-bold text-white shadow-md active:bg-[#8B6A1D]"
-          aria-label="Order Now CTA"
-        >
-          ORDER NOW
-        </Link>
-      </div>
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="md:hidden fixed inset-0 top-[80px] bg-ink z-40 flex flex-col p-8 overflow-y-auto"
+          >
+            <div className="flex flex-col gap-8 mt-8">
+              {navLinks.map((link, i) => (
+                <motion.a
+                  key={link.name} href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}
+                  className="font-editorial italic text-5xl text-cream hover:text-gold transition-colors block border-b border-gold/10 pb-4"
+                >
+                  {link.name}
+                </motion.a>
+              ))}
+            </div>
+            
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="mt-auto pt-12 flex flex-col gap-6">
+               <button onClick={handleOrder} className="bg-gold text-ink font-sans font-medium px-6 py-4 rounded-sm w-full text-lg shadow-[0_0_20px_rgba(201,146,42,0.3)]">
+                 Start Ordering
+               </button>
+               <div className="flex justify-center gap-6 mt-4 pb-8">
+                  <a href="#" className="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center text-muted hover:border-gold hover:text-gold transition-colors">
+                    <Instagram size={20} />
+                  </a>
+                  <a href="#" className="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center text-muted hover:border-gold hover:text-gold transition-colors">
+                    <Facebook size={20} />
+                  </a>
+               </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
-};
-
-export default Navbar;
+}
