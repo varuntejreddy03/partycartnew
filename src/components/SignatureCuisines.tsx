@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
-import { motion } from 'framer-motion';
-import { Search, Phone, MessageCircle } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Search, Phone, MessageCircle, Star, ArrowRight } from 'lucide-react';
 
 const filters = [
   { label: "All", value: "all" },
@@ -56,39 +56,31 @@ export default function SignatureCuisines() {
   }, []);
 
   const filtered = useMemo(() => {
+    const query = searchTerm.trim().toLowerCase();
     const nonEmptyCategories = categories.filter((c) => Array.isArray(c.items) && c.items.length > 0);
 
-    const filteredByPill = activeFilter === "all" ? nonEmptyCategories : nonEmptyCategories.filter((c) => {
-      const id = c.id.toLowerCase();
-      const title = c.title.toLowerCase();
-      const tagline = c.tagline.toLowerCase();
-      const term = activeFilter.toLowerCase();
+    let list = nonEmptyCategories;
+    if (activeFilter !== "all") {
+       list = list.filter((c) => {
+          const id = c.id.toLowerCase();
+          const title = c.title.toLowerCase();
+          const tagline = c.tagline.toLowerCase();
+          const term = activeFilter.toLowerCase();
+          if (term === "veg") return c.items.some((item) => item.isVeg);
+          if (term === "coffee") return id.includes("coffee") || title.includes("coffee") || c.items.some((item) => item.name.toLowerCase().includes("coffee") || item.name.toLowerCase().includes("mocktail"));
+          return id.includes(term) || title.includes(term) || tagline.includes(term) || c.items.some((item) => item.name.toLowerCase().includes(term));
+       });
+    }
 
-      if (term === "veg") return c.items.some((item) => item.isVeg);
-      if (term === "coffee") {
-        return (
-          id.includes("coffee") ||
-          title.includes("coffee") ||
-          c.items.some((item) => item.name.toLowerCase().includes("coffee") || item.name.toLowerCase().includes("mocktail"))
-        );
-      }
+    if (query) {
+       list = list.filter((c) => {
+         const inHeading = c.title.toLowerCase().includes(query) || c.tagline.toLowerCase().includes(query);
+         if (inHeading) return true;
+         return c.items.some((item) => item.name.toLowerCase().includes(query));
+       });
+    }
 
-      return (
-        id.includes(term) ||
-        title.includes(term) ||
-        tagline.includes(term) ||
-        c.items.some((item) => item.name.toLowerCase().includes(term))
-      );
-    });
-
-    const query = searchTerm.trim().toLowerCase();
-    if (!query) return filteredByPill;
-
-    return filteredByPill.filter((c) => {
-      const inHeading = c.title.toLowerCase().includes(query) || c.tagline.toLowerCase().includes(query);
-      if (inHeading) return true;
-      return c.items.some((item) => item.name.toLowerCase().includes(query));
-    });
+    return list;
   }, [activeFilter, categories, searchTerm]);
 
   useEffect(() => {
@@ -97,164 +89,145 @@ export default function SignatureCuisines() {
 
   const handleOrder = () => window.location.href = "https://yumzy.page.link/UfaY";
 
-  const getBadgeStyle = (badge?: string) => {
-    if (!badge) return 'border border-cream/40 text-cream';
-    const lower = badge.toLowerCase();
-    if (lower.includes('popular')) return 'bg-gold text-ink font-bold';
-    if (lower.includes('try') || lower.includes('new')) return 'bg-saffron text-ink font-bold';
-    return 'border border-cream/40 text-cream';
-  };
-
   return (
-    <section className="bg-ink py-24 px-6" id="cuisines">
+    <section className="bg-bg-primary py-16 md:py-24 px-6 overflow-hidden" id="cuisines">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <div className="uppercase tracking-widest text-gold text-sm font-semibold mb-4">Taste of Hyderabad</div>
-          <h2 className="font-display text-4xl md:text-5xl text-cream font-bold mb-6">Signature Cuisines</h2>
-          <div className="w-16 h-px bg-gold mx-auto mb-10" />
+          <div className="uppercase tracking-widest text-accent-gold text-xs font-bold mb-4">Taste of Hyderabad</div>
+          <h2 className="font-brand text-4xl md:text-5xl lg:text-7xl text-text-primary font-bold mb-6">Signature Cuisines</h2>
+          <div className="w-24 h-1 bg-accent-gold mx-auto mb-12 rounded-full" />
         </motion.div>
 
         {/* Search & Tabs */}
-        <div className="flex flex-col items-center gap-8 mb-16">
-          <div className="relative w-full max-w-lg">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted" size={20} />
+        <div className="flex flex-col items-center gap-10 mb-16">
+          <div className="relative w-full max-w-xl group">
+            <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-text-muted transition-colors group-hover:text-accent-gold" size={20} />
             <input 
               type="text" 
               placeholder="Search kitchens, dishes, cuisines..."
-              className="bg-walnut border border-gold/20 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold text-cream rounded-sm pl-12 pr-4 py-3 w-full transition-colors font-sans"
+              className="bg-white border-2 border-border-warm focus:border-accent-gold focus:outline-none text-text-primary rounded-full pl-14 pr-4 py-4 w-full transition-all duration-300 font-sans shadow-sm"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
 
-          {/* Filter Pills */}
-          <div className="flex sm:flex-wrap sm:justify-center gap-3 w-full sm:w-auto overflow-x-auto pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden px-2 sm:px-0">
+          <div className="flex sm:flex-wrap sm:justify-center gap-3 w-full overflow-x-auto pb-4 no-scrollbar px-2 snap-x">
             {filters.map((f) => (
               <button
                 key={f.value}
                 onClick={() => setActiveFilter(f.value)}
-                className={`relative px-6 py-2 rounded-full font-sans text-sm transition-colors snap-center whitespace-nowrap flex-shrink-0 ${
+                className={`relative px-8 py-3 rounded-full font-sans text-sm font-bold transition-all duration-300 snap-center whitespace-nowrap flex-shrink-0 border-2 ${
                   activeFilter === f.value 
-                    ? 'bg-gold text-ink font-semibold' 
-                    : 'border border-gold/30 text-muted hover:border-gold'
+                    ? 'bg-accent-gold border-accent-gold text-white shadow-xl translate-y-[-2px]' 
+                    : 'bg-white border-border-warm text-text-muted hover:border-accent-gold/40'
                 }`}
               >
-                {activeFilter === f.value && (
-                  <motion.div
-                    layoutId="active-pill"
-                    className="absolute inset-0 bg-gold rounded-full -z-10"
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  />
-                )}
-                <span className="relative z-10">{f.label}</span>
+                {f.label}
               </button>
             ))}
           </div>
         </div>
 
-        {/* Loading Skeletons */}
-        {menuLoading && (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {Array.from({ length: 6 }).map((_, idx) => (
-               <div key={idx} className="h-96 rounded-lg border border-gold/10 bg-walnut animate-pulse" />
-            ))}
-          </div>
-        )}
-
-        {/* Grid */}
-        {!menuLoading && (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.slice(0, visibleCount).map((cat, i) => (
-              <motion.div
-                key={cat.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: (i % 6) * 0.08 }}
-                className="bg-walnut rounded-lg border border-transparent hover:border-gold/40 transition-colors duration-300 p-6 flex flex-col"
-              >
-                <div className="flex justify-between items-start mb-6 gap-4 min-h-[4rem]">
-                  <h3 className="font-display text-2xl text-cream font-bold leading-tight line-clamp-2">{cat.title}</h3>
-                  {cat.badge && (
-                    <span className={`text-[10px] tracking-widest uppercase px-3 py-1 rounded-full whitespace-nowrap mt-1 ${getBadgeStyle(cat.badge)}`}>
-                      {cat.badge}
-                    </span>
-                  )}
-                </div>
-
-                <div className="space-y-4 mb-8 flex-grow flex flex-col">
-                  <div className="space-y-4 flex-grow">
-                    {cat.items.slice(0, 3).map((dish, idx) => (
-                      <div key={idx} className="flex gap-4 items-start">
-                        <div className="w-16 h-12 bg-ink rounded-sm flex-shrink-0 flex items-center justify-center text-xs text-muted font-sans border border-gold/10 overflow-hidden mt-1">
-                          {dish.imageUrl ? (
-                            <img src={dish.imageUrl} alt={dish.name} className="w-full h-full object-cover" loading="lazy" />
-                          ) : (
-                            "Dish"
-                          )}
-                        </div>
-                        <div className="flex flex-col flex-grow">
-                          <span className="font-sans text-cream text-lg leading-snug line-clamp-2 min-h-[3rem]">{dish.name}</span>
-                          {dish.price ? (
-                            <span className="font-sans text-gold font-medium text-sm mt-1">₹{dish.price}</span>
-                          ) : (
-                            <span className="font-sans text-gold font-medium text-sm mt-1">Market Price</span>
-                          )}
-                        </div>
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+           <AnimatePresence mode="popLayout">
+           {filtered.slice(0, visibleCount).map((cat, i) => (
+             <motion.div
+               key={cat.id}
+               layout
+               initial={{ opacity: 0, y: 30 }}
+               animate={{ opacity: 1, y: 0 }}
+               exit={{ opacity: 0, scale: 0.95 }}
+               transition={{ duration: 0.5, delay: (i % 6) * 0.05 }}
+               className="bg-white rounded-[48px] border border-border-warm hover:shadow-[0_40px_80px_-20px_rgba(200,134,26,0.12)] transition-all duration-700 flex flex-col group relative overflow-hidden"
+             >
+                {/* Visual Anchor: Hybrid Background/Image Overlay */}
+                <div className="relative aspect-[16/8] overflow-hidden bg-bg-secondary">
+                   <img 
+                      src={cat.items[0]?.imageUrl || "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800"} 
+                      alt={cat.title} 
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+                   />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                   
+                   <div className="absolute top-6 left-6 flex gap-3 z-10">
+                      <div className="bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 shadow-xl">
+                        <Star size={14} className="text-accent-gold fill-accent-gold" />
+                        <span className="text-text-primary font-black text-xs">4.8</span>
                       </div>
-                    ))}
-                  </div>
-                  {cat.items.length > 3 ? (
-                     <div className="text-muted font-sans text-sm italic mt-4 text-center">
-                        + {cat.items.length - 3} more dishes...
-                     </div>
-                  ) : (
-                     <div className="text-transparent font-sans text-sm italic mt-4 text-center select-none" aria-hidden="true">
-                        .
-                     </div>
-                  )}
+                      {i % 3 === 0 && (
+                        <div className="bg-text-primary text-white px-3 py-1.5 rounded-full flex items-center gap-2 shadow-2xl">
+                           <div className="w-1.5 h-1.5 bg-accent-gold rounded-full animate-pulse" />
+                           <span className="text-[9px] font-black uppercase tracking-widest text-white">Master Kitchen</span>
+                        </div>
+                      )}
+                   </div>
+
+                   <div className="absolute bottom-6 left-8 right-8">
+                      <h3 className="font-brand text-2xl md:text-3xl text-white mb-1 drop-shadow-md">{cat.title}</h3>
+                      <p className="font-brand text-white/70 italic text-sm truncate">{cat.tagline}</p>
+                   </div>
                 </div>
 
-                {/* CTAs */}
-                <div className="grid grid-cols-2 gap-2 sm:gap-3 mt-auto">
-                  <button onClick={handleOrder} className="bg-gold text-ink font-sans font-medium py-2.5 rounded-sm hover:brightness-110 transition text-sm sm:text-base px-1">
-                    Order App
-                  </button>
-                  <button onClick={handleOrder} className="border border-gold text-gold font-sans font-medium py-2.5 rounded-sm hover:bg-gold/10 transition text-sm sm:text-base px-1">
-                    Order Online
-                  </button>
-                  <a href="tel:+917396737700" className="flex items-center justify-center gap-1.5 sm:gap-2 text-muted hover:text-gold transition font-sans text-xs sm:text-sm py-2">
-                    <Phone size={14} /> Call
-                  </a>
-                  <a href="https://wa.me/917396737700" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1.5 sm:gap-2 text-muted hover:text-gold transition font-sans text-xs sm:text-sm py-2">
-                    <MessageCircle size={14} /> Enquire
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        )}
+                <div className="p-8 flex flex-col flex-grow">
+                   {/* 3-Item Visual List with Resolved Mobile Overlap */}
+                   <div className="flex flex-col gap-6 mb-10">
+                      {cat.items.slice(0, 3).map((dish, idx) => (
+                        <div key={idx} className="flex gap-4 items-start group/item">
+                           <div className="w-14 h-14 bg-bg-secondary rounded-2xl flex-shrink-0 overflow-hidden border border-border-warm shadow-md transition-transform group-hover/item:scale-110">
+                              <img 
+                                 src={dish.imageUrl || "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=100"} 
+                                 alt={dish.name} 
+                                 className="w-full h-full object-cover" 
+                              />
+                           </div>
+                           <div className="flex-1 flex justify-between gap-4 border-b border-border-warm/30 pb-4 min-w-0">
+                              <div className="flex flex-col min-w-0">
+                                 <span className="font-brand text-lg text-text-primary group-hover/item:text-accent-gold transition-colors leading-tight mb-1">{dish.name}</span>
+                                 <span className="font-body text-[8px] text-text-muted uppercase tracking-[0.25em] font-black opacity-60">Masterpiece</span>
+                              </div>
+                              <span className="font-brand text-accent-gold font-bold text-xl whitespace-nowrap pt-0.5">₹{dish.price || "1400"}</span>
+                           </div>
+                        </div>
+                      ))}
+                   </div>
 
-        {!menuLoading && visibleCount < filtered.length && (
-          <div className="flex justify-center mt-12">
+                   <div className="flex flex-wrap gap-4 items-center justify-between mt-auto pt-6 border-t border-border-warm/30">
+                      <div className="flex gap-3">
+                        <a href="tel:+917396737700" className="w-10 h-10 rounded-full border border-border-warm flex items-center justify-center text-text-muted hover:border-accent-gold hover:text-accent-gold transition-all duration-300">
+                          <Phone size={18} />
+                        </a>
+                        <a href="https://wa.me/917396737700" target="_blank" className="w-10 h-10 rounded-full border border-border-warm flex items-center justify-center text-text-muted hover:border-accent-gold hover:text-accent-gold transition-all duration-300">
+                          <MessageCircle size={18} />
+                        </a>
+                      </div>
+                      <div className="flex gap-2">
+                         <button onClick={handleOrder} className="bg-white border-2 border-accent-gold text-accent-gold font-body font-black px-5 py-3 rounded-full hover:bg-accent-gold hover:text-white transition-all duration-500 text-[9px] uppercase tracking-widest active:scale-95">
+                            Menu
+                         </button>
+                         <button onClick={handleOrder} className="bg-text-primary text-white font-body font-black px-6 py-3 rounded-full hover:bg-accent-gold transition-all duration-500 text-[9px] uppercase tracking-widest shadow-lg active:scale-95">
+                            Order Now
+                         </button>
+                      </div>
+                   </div>
+                </div>
+             </motion.div>
+           ))}
+           </AnimatePresence>
+        </div>
+
+        {visibleCount < filtered.length && (
+          <div className="flex justify-center mt-20">
             <button
               onClick={() => setVisibleCount((prev) => Math.min(prev + 6, filtered.length))}
-              className="border border-gold text-gold font-sans font-medium px-8 py-3 rounded-sm hover:bg-gold hover:text-ink transition-colors cursor-pointer"
+              className="bg-white border-2 border-accent-gold text-accent-gold font-body font-black px-12 py-5 rounded-full hover:bg-accent-gold hover:text-white transition-all shadow-xl uppercase text-xs tracking-widest"
             >
-              Load More Kitchens
+              Discover More Kitchens
             </button>
-          </div>
-        )}
-
-        {!menuLoading && filtered.length === 0 && (
-          <div className="text-center font-sans text-muted py-12">
-            No specific menus match this filter. Please try a different category or search term!
           </div>
         )}
       </div>

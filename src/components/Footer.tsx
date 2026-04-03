@@ -1,73 +1,104 @@
-import { Instagram, Facebook, Phone, MapPin, Mail } from 'lucide-react';
+import { Instagram, Facebook, Phone, MapPin, Mail, ArrowUp } from 'lucide-react';
 import logo from '../assets/partycart-logo.png';
 
+const footerLinks = [
+  {
+    title: "Company",
+    links: [
+      { name: "About Us", href: "#" },
+      { name: "Our Services", href: "#services" },
+      { name: "Partner With Us", href: "#" },
+      { name: "Careers", href: "#" }
+    ]
+  },
+  {
+    title: "Legal",
+    links: [
+      { name: "Privacy Policy", href: "#" },
+      { name: "Terms of Service", href: "#" },
+      { name: "Refund Policy", href: "#" },
+      { name: "Cookie Policy", href: "#" }
+    ]
+  },
+  {
+    title: "Explore",
+    links: [
+      { name: "Signature Cuisines", href: "#cuisines" },
+      { name: "How It Works", href: "#how-it-works" },
+      { name: "Contact Support", href: "#" },
+      { name: "FAQs", href: "#" }
+    ]
+  }
+];
+
 export default function Footer() {
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
   return (
-    <footer className="bg-ink border-t border-gold/20 pt-16 md:pt-20 pb-8 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_1.5fr_1.5fr_2fr] gap-10 md:gap-12 mb-12 md:mb-16 border-b border-gold/10 pb-12 md:pb-16">
+    <footer className="bg-bg-dark border-t-2 border-accent-gold pt-20 pb-8 px-6 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr_1fr_1.5fr] gap-12 md:gap-8 mb-16 border-b border-white/5 pb-16">
         
-        {/* Brand */}
-        <div className="sm:col-span-2 md:col-span-1">
-          <div className="mb-6 flex items-center">
-            <img src={logo} alt="PartyCart" className="w-40 sm:w-48 h-auto object-contain" />
+        {/* Brand Column */}
+        <div className="flex flex-col items-start gap-8">
+          <div className="cursor-pointer" onClick={scrollToTop}>
+            <img src={logo} alt="PartyCart" className="w-40 md:w-52 h-auto object-contain brightness-0 invert" />
           </div>
-          <p className="font-sans text-muted mb-8 md:pr-4">
+          <p className="font-sans text-white/50 text-base leading-relaxed max-w-xs">
             Hyderabad's definitive platform for premium curations, home-grown culinary experts, and Khandani Bawarchis.
           </p>
           <div className="flex gap-4">
-            <a href="#" className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center text-muted hover:border-gold hover:text-gold transition-colors">
-              <Instagram size={18} />
+            <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-accent-gold hover:text-accent-gold transition-colors duration-300">
+              <Instagram size={20} />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center text-muted hover:border-gold hover:text-gold transition-colors">
-              <Facebook size={18} />
+            <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-accent-gold hover:text-accent-gold transition-colors duration-300">
+              <Facebook size={20} />
             </a>
           </div>
         </div>
 
-        {/* Links */}
-        <div>
-          <h4 className="font-sans text-cream font-bold mb-6">Company</h4>
-          <ul className="space-y-4 font-sans text-muted">
-            <li><a href="#" className="hover:text-gold transition-colors">About Us</a></li>
-            <li><a href="#" className="hover:text-gold transition-colors">Our Services</a></li>
-            <li><a href="#" className="hover:text-gold transition-colors">Partner With Us</a></li>
-            <li><a href="#" className="hover:text-gold transition-colors">Careers</a></li>
-          </ul>
-        </div>
+        {/* Dynamic Link Columns */}
+        {footerLinks.map((column, i) => (
+          <div key={i} className="flex flex-col gap-6">
+            <h4 className="font-display text-white text-lg font-bold tracking-wide uppercase">{column.title}</h4>
+            <ul className="flex flex-col gap-4">
+              {column.links.map((link, j) => (
+                <li key={j}>
+                  <a href={link.href} className="font-sans text-white/40 hover:text-accent-gold transition-colors text-[15px]">{link.name}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
 
-        <div>
-          <h4 className="font-sans text-cream font-bold mb-6">Legal</h4>
-          <ul className="space-y-4 font-sans text-muted">
-            <li><a href="#" className="hover:text-gold transition-colors">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-gold transition-colors">Terms of Service</a></li>
-            <li><a href="#" className="hover:text-gold transition-colors">Refund Policy</a></li>
-            <li><a href="#" className="hover:text-gold transition-colors">Cookie Policy</a></li>
-          </ul>
-        </div>
-
-        {/* Contact */}
-        <div>
-          <h4 className="font-sans text-cream font-bold mb-6">Contact Us</h4>
-          <ul className="space-y-4 font-sans text-muted">
-            <li className="flex items-start gap-3">
-              <MapPin size={20} className="text-gold flex-shrink-0 mt-1" />
-              <span>Jubilee Hills, Hyderabad,<br/>Telangana 500033</span>
+        {/* Contact Column */}
+        <div className="flex flex-col gap-6">
+          <h4 className="font-display text-white text-lg font-bold tracking-wide uppercase">Contact Us</h4>
+          <ul className="flex flex-col gap-5">
+            <li className="flex items-start gap-4">
+              <MapPin size={18} className="text-accent-gold flex-shrink-0 mt-1" />
+              <span className="font-sans text-white/50 text-sm leading-relaxed">Jubilee Hills, Hyderabad,<br/>Telangana 500033</span>
             </li>
-            <li className="flex items-center gap-3">
-              <Phone size={20} className="text-gold flex-shrink-0" />
-              <a href="tel:+917396737700" className="hover:text-gold transition-colors">+91 73967 37700</a>
+            <li className="flex items-center gap-4">
+              <Phone size={18} className="text-accent-gold flex-shrink-0" />
+              <a href="tel:+917396737700" className="font-sans text-white/50 hover:text-accent-gold transition-colors text-sm">+91 73967 37700</a>
             </li>
-            <li className="flex items-center gap-3">
-              <Mail size={20} className="text-gold flex-shrink-0" />
-              <a href="mailto:hello@partycart.com" className="hover:text-gold transition-colors">hello@partycart.com</a>
+            <li className="flex items-center gap-4">
+              <Mail size={18} className="text-accent-gold flex-shrink-0" />
+              <a href="mailto:hello@partycart.com" className="font-sans text-white/50 hover:text-accent-gold transition-colors text-sm">hello@partycart.com</a>
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 font-sans text-muted/50 text-sm">
-        <p>© {new Date().getFullYear()} PartyCart by Yumzy. All rights reserved.</p>
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 font-sans text-white/30 text-xs tracking-widest uppercase font-bold">
+        <p>© 2026 PartyCart by Yumzy. All rights reserved.</p>
         <p>Designed for the culture of Hyderabad.</p>
+        <button 
+          onClick={scrollToTop} 
+          className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent-gold hover:text-white transition-all duration-300"
+        >
+          <ArrowUp size={24} />
+        </button>
       </div>
     </footer>
   );
