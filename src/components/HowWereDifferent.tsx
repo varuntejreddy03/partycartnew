@@ -30,17 +30,17 @@ const standards = [
 
 export default function HowWereDifferent() {
   return (
-    <section className="bg-bg-primary py-16 md:py-28 px-6 relative overflow-hidden" id="different">
+    <section className="bg-bg-primary py-20 px-6 relative overflow-hidden" id="different">
       {/* Background Architectural Element */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent-gold/[0.03] rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
       
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 mb-16 items-end">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:max-w-2xl"
+            className="lg:max-w-xl"
           >
             <div className="flex items-center gap-3 mb-6">
                <Sparkles className="text-accent-gold" size={20} />
@@ -58,7 +58,7 @@ export default function HowWereDifferent() {
             transition={{ delay: 0.2 }}
             className="lg:pb-4"
           >
-            <p className="font-body text-text-muted text-lg md:text-xl leading-relaxed max-w-lg">
+            <p className="font-body text-text-muted text-lg md:text-xl leading-relaxed max-w-sm">
               Behind every order is a network of heritage kitchens dedicated to preserving the authentic flavors that define Hyderabad.
             </p>
           </motion.div>
@@ -75,7 +75,7 @@ export default function HowWereDifferent() {
                className="group relative p-10 bg-white rounded-[32px] border border-border-warm hover:border-accent-gold/30 hover:shadow-2xl hover:shadow-accent-gold/5 transition-all duration-500 overflow-hidden"
              >
                 {/* Background ID */}
-                <div className="absolute -top-4 -right-2 font-brand text-8xl text-bg-secondary group-hover:text-accent-gold/[0.05] transition-colors duration-500 select-none pointer-events-none">
+                <div className="absolute top-2 right-3 font-brand text-7xl font-black opacity-5 transition-colors duration-500 select-none pointer-events-none">
                   {s.id}
                 </div>
 
@@ -105,11 +105,11 @@ export default function HowWereDifferent() {
            <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/dark-wood.png')]" />
            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent" />
            
-           <div className="relative z-10 max-w-3xl mx-auto text-center">
-              <div className="w-16 h-16 rounded-full border-2 border-accent-gold/50 flex items-center justify-center mx-auto mb-10">
-                 <Sparkles className="text-accent-gold" size={24} />
+           <div className="relative z-10 max-w-2xl mx-auto text-center">
+              <div className="w-12 h-12 rounded-full border border-[#C89B3C]/40 flex items-center justify-center mx-auto mb-10">
+                 <Sparkles className="text-accent-gold" size={20} />
               </div>
-              <h3 className="font-accent italic text-3xl md:text-5xl text-accent-gold-light mb-8 leading-tight">
+              <h3 className="font-accent italic text-2xl text-[#C89B3C] mb-8 leading-snug">
                 "Our commitment is simple: We host your party like it's our own home."
               </h3>
               <p className="font-body text-white/60 tracking-[0.2em] font-bold uppercase text-xs">

@@ -55,17 +55,17 @@ export default function CTASection() {
               whileHover={{ scale: 1.05, shadow: "0 20px 40px rgba(0,0,0,0.2)" }}
               whileTap={{ scale: 0.98 }}
               onClick={handleOrder}
-              className="bg-bg-dark text-white font-sans font-bold px-10 py-5 rounded-full flex items-center justify-center gap-3 shadow-xl hover-sweep text-lg"
+              className="bg-bg-dark text-white font-sans font-semibold h-12 px-8 rounded-full flex items-center justify-center gap-3 shadow-xl hover-sweep text-sm"
             >
-              <Download size={24} /> Order Online
+              <ShoppingBag size={20} /> Order Online
             </motion.button>
             <motion.button 
               whileHover={{ scale: 1.05, shadow: "0 20px 40px rgba(0,0,0,0.1)" }}
               whileTap={{ scale: 0.98 }}
               onClick={handleOrder}
-              className="bg-white text-bg-dark border-2 border-bg-dark font-sans font-bold px-10 py-5 rounded-full flex items-center justify-center gap-3 shadow-xl hover:bg-bg-dark hover:text-white transition-all text-lg"
+              className="bg-transparent text-bg-dark border-2 border-bg-dark font-sans font-semibold h-12 px-8 rounded-full flex items-center justify-center gap-3 shadow-xl hover:bg-bg-dark hover:text-accent-gold transition-all text-sm"
             >
-              <ShoppingBag size={24} /> Order Online
+              <Download size={20} /> Download App
             </motion.button>
           </div>
           

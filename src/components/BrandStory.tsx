@@ -12,8 +12,8 @@ export default function BrandStory() {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
   return (
-    <section ref={containerRef} id="story" className="relative py-16 md:py-24 bg-bg-primary overflow-hidden border-b border-border-warm/30">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+    <section ref={containerRef} id="story" className="relative py-20 bg-bg-primary overflow-hidden border-b border-border-warm/30">
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
           
           {/* Left Side: Immersive Visuals */}

@@ -111,8 +111,8 @@ export default function SignatureCuisines() {
   }, [selectedCategory]);
 
   return (
-    <section className="bg-bg-primary py-16 md:py-24 px-6 overflow-hidden" id="cuisines">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-white py-20 px-6 overflow-hidden relative" id="cuisines">
+      <div className="max-w-6xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -137,15 +137,15 @@ export default function SignatureCuisines() {
             />
           </div>
 
-          <div className="flex sm:flex-wrap sm:justify-center gap-3 w-full overflow-x-auto pb-4 no-scrollbar px-2 snap-x">
+          <div className="flex sm:flex-wrap sm:justify-center gap-3 w-full overflow-x-auto flex-nowrap scrollbar-hide pb-4 px-2 snap-x">
             {filters.map((f) => (
               <button
                 key={f.value}
                 onClick={() => setActiveFilter(f.value)}
-                className={`relative px-8 py-3 rounded-full font-sans text-sm font-bold transition-all duration-300 snap-center whitespace-nowrap flex-shrink-0 border-2 ${
+                className={`relative px-5 py-2 rounded-full font-sans text-sm font-medium transition-all duration-300 snap-center flex-shrink-0 whitespace-nowrap ${
                   activeFilter === f.value 
-                    ? 'bg-accent-gold border-accent-gold text-white shadow-xl translate-y-[-2px]' 
-                    : 'bg-white border-border-warm text-text-muted hover:border-accent-gold/40'
+                    ? 'bg-[#C89B3C] text-white shadow-xl translate-y-[-2px]' 
+                    : 'border border-[#C89B3C] text-[#C89B3C] bg-transparent hover:bg-[#C89B3C]/5'
                 }`}
               >
                 {f.label}
@@ -154,7 +154,7 @@ export default function SignatureCuisines() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
            <AnimatePresence mode="popLayout">
            {filtered.slice(0, visibleCount).map((cat, i) => (
              <motion.div
@@ -164,10 +164,10 @@ export default function SignatureCuisines() {
                animate={{ opacity: 1, y: 0 }}
                exit={{ opacity: 0, scale: 0.95 }}
                transition={{ duration: 0.5, delay: (i % 6) * 0.05 }}
-               className="bg-white rounded-[48px] border border-border-warm hover:shadow-[0_40px_80px_-20px_rgba(200,134,26,0.12)] transition-all duration-700 flex flex-col group relative overflow-hidden"
+               className="bg-white rounded-[28px] border border-border-warm hover:shadow-[0_20px_40px_-15px_rgba(200,134,26,0.12)] transition-all duration-500 flex flex-col group relative overflow-hidden"
              >
                 {/* Visual Anchor: Hybrid Background/Image Overlay */}
-                <div className="relative aspect-[16/8] overflow-hidden bg-bg-secondary">
+                <div className="relative aspect-[16/9] overflow-hidden bg-bg-secondary">
                    <img 
                       src={cat.items[0]?.imageUrl || "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800"} 
                       alt={cat.title} 
@@ -180,12 +180,6 @@ export default function SignatureCuisines() {
                         <Star size={14} className="text-accent-gold fill-accent-gold" />
                         <span className="text-text-primary font-black text-xs">4.8</span>
                       </div>
-                      {i % 3 === 0 && (
-                        <div className="bg-text-primary text-white px-3 py-1.5 rounded-full flex items-center gap-2 shadow-2xl">
-                           <div className="w-1.5 h-1.5 bg-accent-gold rounded-full animate-pulse" />
-                           <span className="text-[9px] font-black uppercase tracking-widest text-white">Master Kitchen</span>
-                        </div>
-                      )}
                    </div>
 
                    <div className="absolute bottom-6 left-8 right-8">
@@ -194,47 +188,47 @@ export default function SignatureCuisines() {
                    </div>
                 </div>
 
-                <div className="p-8 flex flex-col flex-grow">
-                   {/* 3-Item Visual List with Resolved Mobile Overlap */}
-                   <div className="flex flex-col gap-6 mb-10">
+                <div className="p-5 md:p-6 flex flex-col flex-grow">
+                   {/* 3-Item Visual List */}
+                   <div className="flex flex-col mb-6 gap-0">
                       {cat.items.slice(0, 3).map((dish, idx) => (
-                        <div key={idx} className="flex gap-4 items-start group/item">
-                           <div className="w-14 h-14 bg-bg-secondary rounded-2xl flex-shrink-0 overflow-hidden border border-border-warm shadow-md transition-transform group-hover/item:scale-110">
-                              <img 
-                                 src={dish.imageUrl || "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=100"} 
-                                 alt={dish.name} 
-                                 className="w-full h-full object-cover" 
-                              />
-                           </div>
-                           <div className="flex-1 flex justify-between gap-4 border-b border-border-warm/30 pb-4 min-w-0">
-                              <div className="flex flex-col min-w-0">
-                                 <span className="font-brand text-lg text-text-primary group-hover/item:text-accent-gold transition-colors leading-tight mb-1">{dish.name}</span>
-                                 <span className="font-body text-[8px] text-text-muted uppercase tracking-[0.25em] font-black opacity-60">Masterpiece</span>
+                        <div key={idx} className="flex justify-between items-center gap-3 group/item border-b border-[#F0F0F5] py-3.5 first:pt-0 last:border-b-0 last:pb-0">
+                           <div className="flex-1 flex flex-col min-w-0 pr-2">
+                              <div className={`w-[12px] h-[12px] border-[1px] flex items-center justify-center rounded-[2px] mb-2 ${dish.isVeg ? 'border-[#1BA672]' : 'border-[#E23744]'}`}>
+                                <div className={`w-[6px] h-[6px] rounded-full ${dish.isVeg ? 'bg-[#1BA672]' : 'bg-[#E23744]'}`}></div>
                               </div>
-                              <span className="font-brand text-accent-gold font-bold text-xl whitespace-nowrap pt-0.5">₹{dish.price || "1400"}</span>
+                              <span className="font-body font-bold text-[14px] sm:text-[15px] text-[#3E4152] group-hover/item:text-accent-gold transition-colors leading-[1.3] mb-1 line-clamp-2">{dish.name}</span>
+                              <span className="font-body text-[#3E4152] font-semibold text-[13px]">₹{dish.price || "140"}</span>
+                           </div>
+                           <div className="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0 bg-bg-secondary border border-[#F0F0F5] shadow-sm relative transition-transform duration-500 group-hover/item:scale-105">
+                                 <img 
+                                    src={dish.imageUrl || "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=100"} 
+                                    alt={dish.name} 
+                                    className="w-full h-full object-cover" 
+                                 />
                            </div>
                         </div>
                       ))}
                    </div>
 
                    <div className="flex flex-wrap gap-4 items-center justify-between mt-auto pt-6 border-t border-border-warm/30">
-                      <div className="flex gap-3">
-                        <a href="tel:+917396737700" className="w-10 h-10 rounded-full border border-border-warm flex items-center justify-center text-text-muted hover:border-accent-gold hover:text-accent-gold transition-all duration-300">
-                          <Phone size={18} />
-                        </a>
-                        <a href="https://wa.me/917396737700" target="_blank" className="w-10 h-10 rounded-full border border-border-warm flex items-center justify-center text-text-muted hover:border-accent-gold hover:text-accent-gold transition-all duration-300">
-                          <MessageCircle size={18} />
-                        </a>
-                      </div>
-                      <div className="flex gap-2">
-                         <button onClick={() => setSelectedCategory(cat)} className="bg-white border-2 border-accent-gold text-accent-gold font-body font-black px-5 py-3 rounded-full hover:bg-accent-gold hover:text-white transition-all duration-500 text-[9px] uppercase tracking-widest active:scale-95">
-                            Menu
-                         </button>
-                         <button onClick={handleOrder} className="bg-text-primary text-white font-body font-black px-6 py-3 rounded-full hover:bg-accent-gold transition-all duration-500 text-[9px] uppercase tracking-widest shadow-lg active:scale-95">
-                            Order Now
-                         </button>
-                      </div>
-                   </div>
+                       <div className="flex gap-3">
+                         <a href="tel:+917396737700" className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-[#C89B3C] hover:text-[#C89B3C] transition-all duration-300">
+                           <Phone size={14} />
+                         </a>
+                         <a href="https://wa.me/917396737700" target="_blank" className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-[#C89B3C] hover:text-[#C89B3C] transition-all duration-300">
+                           <MessageCircle size={14} />
+                         </a>
+                       </div>
+                       <div className="flex gap-2">
+                          <button onClick={() => setSelectedCategory(cat)} className="h-9 px-4 text-xs font-semibold rounded-full border border-[#C89B3C] text-[#C89B3C] uppercase tracking-wide active:scale-95 transition-all">
+                             Menu
+                          </button>
+                          <button onClick={handleOrder} className="h-9 px-4 text-xs font-semibold rounded-full bg-[#1a1208] text-white uppercase tracking-wide shadow-md active:scale-95 transition-all">
+                             Order Now
+                          </button>
+                       </div>
+                    </div>
                 </div>
              </motion.div>
            ))}
@@ -277,34 +271,37 @@ export default function SignatureCuisines() {
                   </div>
                 </div>
 
-                <div className="overflow-y-auto p-5 md:p-8 space-y-4 md:space-y-5 flex-1">
-                  {selectedCategory.items.map((dish, index) => (
-                    <div key={`${selectedCategory.id}-${dish.name}-${index}`} className="flex items-start gap-4 rounded-[24px] border border-[#F0E2C8] bg-white p-4 md:p-5 shadow-[0_8px_20px_rgba(26,18,8,0.04)]">
-                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl overflow-hidden bg-[#FFF8F0] flex-shrink-0 border border-[#E8D5B7] shadow-sm">
-                        <img
-                          src={dish.imageUrl || "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=100"}
-                          alt={dish.name}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="min-w-0">
-                            <h4 className="font-brand text-xl md:text-2xl text-[#1A1208] font-bold leading-tight">{dish.name}</h4>
-                            <p className="font-body text-sm md:text-[15px] text-[#5C4A1E] mt-2 leading-relaxed line-clamp-2 md:line-clamp-3">{dish.description}</p>
+                <div className="overflow-y-auto p-4 md:p-8 flex-1 bg-[#F5F6F8]">
+                  <div className="max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                    {selectedCategory.items.map((dish, index) => (
+                      <div key={`${selectedCategory.id}-${dish.name}-${index}`} className="flex justify-between items-start gap-4 bg-white p-4 md:p-5 rounded-2xl border border-[#E9E9EB] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-all">
+                        <div className="flex-1 min-w-0 pr-2">
+                          <div className={`w-[16px] h-[16px] border-[1.5px] flex items-center justify-center rounded-sm mb-2 ${dish.isVeg ? 'border-[#1BA672]' : 'border-[#E23744]'}`}>
+                            <div className={`w-[8px] h-[8px] rounded-full ${dish.isVeg ? 'bg-[#1BA672]' : 'bg-[#E23744]'}`}></div>
                           </div>
-                          <div className="text-right shrink-0">
-                            {dish.price != null && (
-                              <div className="font-brand text-2xl md:text-3xl text-[#C8920A] font-bold leading-none">₹{dish.price.toLocaleString()}</div>
-                            )}
-                            <div className="mt-2 inline-flex items-center rounded-full bg-[#FFF3D7] px-3 py-1.5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-[#9B8560] border border-[#E8C97A]/70">
-                              {dish.isVeg ? 'Veg' : 'Non-Veg'}
-                            </div>
+                          <h4 className="font-body text-[15px] md:text-[17px] text-[#3E4152] font-bold leading-[1.3] mb-1">{dish.name}</h4>
+                          {dish.price != null && (
+                            <div className="font-body text-[14px] md:text-[15px] text-[#3E4152] font-semibold">₹{dish.price.toLocaleString()}</div>
+                          )}
+                          <p className="font-body text-[13px] text-[#686B78] mt-2 leading-relaxed line-clamp-2">{dish.description}</p>
+                        </div>
+                        <div className="w-[110px] md:w-[130px] flex-shrink-0 flex flex-col items-center">
+                          <div className="w-[110px] h-[110px] md:w-[130px] md:h-[130px] rounded-[16px] overflow-hidden bg-gray-50 shadow-sm border border-gray-100 relative group">
+                             <img
+                               src={dish.imageUrl || "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=100"}
+                               alt={dish.name}
+                               className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
+                             />
                           </div>
+                          <button className="-mt-4 z-10 bg-white text-[#1BA672] font-bold px-7 py-2.5 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.12)] border border-[#E9E9EB] text-[13px] uppercase tracking-wide hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:bg-gray-50 transition-all font-body active:scale-95">
+                            ADD
+                          </button>
                         </div>
                       </div>
+                    ))}
                     </div>
-                  ))}
+                  </div>
                 </div>
 
                 <div className="border-t border-[#E8D5B7] bg-[#FFFDF7] px-5 py-4 md:px-8 md:py-5 flex items-center justify-between gap-3">

@@ -2,9 +2,9 @@ import qrCode from "@/assets/p[artycart QR.jpg.jpeg";
 
 const AppDownload = () => {
   return (
-    <section id="download" className="relative py-24 bg-[#1A1A1A] overflow-hidden">
+    <section id="download" className="relative py-20 bg-[#1A1A1A] overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_100%,rgba(168,132,58,0.15),transparent_50%)]" />
-      <div className="container relative z-10 mx-auto px-4">
+      <div className="max-w-6xl relative z-10 mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-4xl mx-auto">
           {/* QR Code */}
           <div className="flex-shrink-0 bg-white p-4 rounded-3xl shadow-xl transform rotate-1 hover:rotate-0 transition-transform">

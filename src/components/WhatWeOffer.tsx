@@ -36,13 +36,13 @@ export default function WhatWeOffer() {
   const handleOrder = () => window.open("https://order.yumzy.in", "_blank", "noopener,noreferrer");
 
   return (
-    <section className="bg-bg-secondary py-16 md:py-28 px-6 relative overflow-hidden" id="offer">
+    <section className="bg-bg-secondary py-20 px-6 relative overflow-hidden" id="offer">
       {/* Decorative Branding */}
       <div className="absolute top-1/2 left-0 font-brand text-[20vw] text-bg-primary select-none pointer-events-none -translate-x-1/2 -z-0">
         Expert
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export default function WhatWeOffer() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto items-stretch">
+        <div className="grid lg:grid-cols-2 gap-6 max-w-6xl mx-auto items-stretch">
           {offerings.map((offer, i) => (
             <motion.div
               key={i}
@@ -70,7 +70,7 @@ export default function WhatWeOffer() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: i * 0.2 }}
-              className="group bg-white rounded-[48px] overflow-hidden shadow-2xl border border-border-warm relative flex flex-col hover:shadow-accent-gold/10 transition-all duration-700"
+              className="group bg-white rounded-[48px] overflow-hidden shadow-2xl border border-border-warm relative flex flex-col hover:shadow-accent-gold/10 transition-all duration-700 h-full"
             >
               {/* Image Section with Overlay */}
               <div className="relative h-[280px] md:h-[350px] overflow-hidden">
@@ -104,10 +104,8 @@ export default function WhatWeOffer() {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
                   {offer.features.map((feature, idx) => (
-                    <div key={idx} className="flex gap-3 text-text-primary font-body text-sm font-semibold items-center">
-                      <div className="w-5 h-5 rounded-full bg-accent-gold/[0.08] flex items-center justify-center text-accent-gold">
-                        <ArrowRight size={10} />
-                      </div>
+                    <div key={idx} className="flex gap-3 text-text-primary font-body text-sm font-medium items-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-accent-gold flex-shrink-0"></div>
                       {feature}
                     </div>
                   ))}

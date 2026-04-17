@@ -51,7 +51,7 @@ export default function Navbar() {
           style={{ width: `${scrollProgress}%` }}
         />
 
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 h-14 md:h-16 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-6 h-14 md:h-16 flex items-center justify-between">
           {/* Logo Container (Original Branding) */}
           <a href="/" className="cursor-pointer flex items-center transition-transform active:scale-95 group">
             <img 
@@ -62,12 +62,12 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Links (Premium DM Sans) */}
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="font-body text-[14px] font-semibold text-text-muted hover:text-accent-gold transition-all duration-500 tracking-[0.05em] uppercase relative group"
+                className="font-body text-[13px] font-medium text-text-muted hover:text-accent-gold transition-all duration-500 tracking-widest uppercase relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-accent-gold transition-all duration-500 group-hover:w-full" />
@@ -76,17 +76,17 @@ export default function Navbar() {
           </div>
 
           {/* Right Section: Premium Support + CTA */}
-          <div className="hidden md:flex items-center gap-8">
-            <a href="tel:+917396737700" className="flex items-center gap-3 text-text-muted hover:text-accent-gold transition-all duration-300 font-body text-[14px] font-bold group">
+          <div className="hidden md:flex items-center gap-6">
+            <a href="tel:+917396737700" className="flex items-center gap-3 text-text-muted hover:text-accent-gold transition-all duration-300 font-body text-[13px] font-semibold uppercase tracking-widest h-12 group">
                <div className="w-10 h-10 rounded-full bg-bg-secondary flex items-center justify-center border border-border-warm group-hover:border-accent-gold/30 transition-colors shadow-sm">
                   <Phone size={16} className="text-accent-gold" />
                </div>
-               <span className="tracking-wide">Support</span>
+               <span>Support</span>
             </a>
             
             <button
               onClick={handleOrder}
-              className="bg-accent-gold text-white font-body font-bold px-8 py-3.5 rounded-full hover:bg-accent-gold-light transition-all shadow-[0_10px_30px_rgba(200,134,26,0.2)] hover:shadow-[0_15px_40px_rgba(200,134,26,0.3)] active:scale-95 text-[15px] tracking-wide animate-pulse-ring"
+              className="bg-accent-gold text-white font-body font-bold h-12 flex items-center px-8 rounded-full hover:bg-accent-gold-light transition-all shadow-[0_10px_30px_rgba(200,134,26,0.2)] hover:shadow-[0_15px_40px_rgba(200,134,26,0.3)] active:scale-95 text-[14px] tracking-widest uppercase animate-pulse-ring"
             >
               Order Now
             </button>

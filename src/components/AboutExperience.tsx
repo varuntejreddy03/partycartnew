@@ -51,8 +51,8 @@ export default function AboutExperience() {
   };
 
   return (
-    <section className="bg-bg-primary py-16 md:py-24 px-6 overflow-hidden" id="about">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-bg-primary py-20 px-6 overflow-hidden" id="about">
+      <div className="max-w-6xl mx-auto">
         <div className="flex flex-col items-center text-center mb-16 md:mb-24">
            <motion.div
              initial={{ opacity: 0, y: 20 }}
@@ -91,7 +91,7 @@ export default function AboutExperience() {
                className="relative w-[85vw] md:w-full flex-shrink-0 snap-center overflow-hidden group cursor-pointer"
                onClick={() => handleVideoClick(short.id)}
              >
-                <div className={`aspect-[4/5] rounded-[40px] overflow-hidden border-[4px] transition-all duration-700 relative ${activeId === i ? 'border-accent-gold shadow-[0_0_50px_rgba(200,134,26,0.25)]' : 'border-white shadow-2xl grayscale-[0.4] group-hover:grayscale-0'}`}>
+                <div className={`aspect-video rounded-2xl overflow-hidden border-[4px] transition-all duration-700 relative ${activeId === i ? 'border-accent-gold shadow-[0_0_50px_rgba(200,134,26,0.25)]' : 'border-white shadow-2xl grayscale-[0.4] group-hover:grayscale-0'}`}>
                   <video 
                     ref={(el) => (videoRefs.current[i] = el)}
                     src={short.src} 
@@ -118,11 +118,11 @@ export default function AboutExperience() {
                   </div>
                 </div>
 
-                <div className="mt-6 text-center px-4">
-                   <h4 className={`font-brand text-xl transition-colors duration-500 ${activeId === i ? 'text-accent-gold' : 'text-text-primary group-hover:text-accent-gold'}`}>
+                <div className="mt-5 text-center px-4 flex flex-col items-center">
+                   <h4 className={`text-base font-semibold transition-colors duration-500 mb-2 ${activeId === i ? 'text-accent-gold' : 'text-text-primary group-hover:text-accent-gold'}`}>
                       {short.title}
                    </h4>
-                   <div className={`h-[1px] bg-accent-gold/40 mx-auto transition-all duration-500 ${activeId === i ? 'w-20' : 'w-10 group-hover:w-20'}`} />
+                   <div className={`h-[1px] bg-accent-gold/40 transition-all duration-500 ${activeId === i ? 'w-20' : 'w-10 group-hover:w-20'}`} />
                 </div>
              </motion.div>
            ))}
@@ -133,15 +133,15 @@ export default function AboutExperience() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mt-20 flex flex-wrap justify-center gap-10 md:gap-20"
+          className="mt-20 flex flex-wrap justify-center gap-10"
         >
-           <div className="flex items-center gap-4 text-text-muted font-body font-bold text-xs uppercase tracking-widest">
+           <div className="flex items-center gap-2 text-text-muted font-body font-bold text-xs uppercase tracking-widest">
               <Heart className="text-accent-gold" size={16} /> Authenticity
            </div>
-           <div className="flex items-center gap-4 text-text-muted font-body font-bold text-xs uppercase tracking-widest">
+           <div className="flex items-center gap-2 text-text-muted font-body font-bold text-xs uppercase tracking-widest">
               <Shield className="text-accent-gold" size={16} /> Quality Checked
            </div>
-           <div className="flex items-center gap-4 text-text-muted font-body font-bold text-xs uppercase tracking-widest">
+           <div className="flex items-center gap-2 text-text-muted font-body font-bold text-xs uppercase tracking-widest">
               <Sparkles className="text-accent-gold" size={16} /> Heritage
            </div>
         </motion.div>

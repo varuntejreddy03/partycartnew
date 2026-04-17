@@ -17,6 +17,10 @@
 }
 
 @layer base {
+  html {
+    font-size: 16px;
+  }
+
   html,
   body,
   #root {
@@ -30,7 +34,6 @@
   body {
     @apply bg-bg-primary text-text-primary antialiased;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 18px;
     line-height: 1.7;
     scroll-behavior: smooth;
   }

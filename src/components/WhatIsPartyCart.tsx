@@ -3,17 +3,17 @@ import { Sparkles, UtensilsCrossed, CalendarCheck } from 'lucide-react';
 
 const features = [
   {
-    icon: <Sparkles size={32} className="text-accent-gold" />,
+    icon: <Sparkles size={18} className="text-accent-gold" />,
     title: "Curated Excellence",
     description: "Every bawarchi and home-chef is meticulously vetted for authenticity, hygiene, and unmatched flavor."
   },
   {
-    icon: <UtensilsCrossed size={32} className="text-accent-gold" />,
+    icon: <UtensilsCrossed size={18} className="text-accent-gold" />,
     title: "Authentic Menus",
     description: "From Dum Biryani to Shikampuri Kebabs, experience true Hyderabadi heritage delivered to your gathering."
   },
   {
-    icon: <CalendarCheck size={32} className="text-accent-gold" />,
+    icon: <CalendarCheck size={18} className="text-accent-gold" />,
     title: "Seamless Hosting",
     description: "We handle the culinary logistics end-to-end so you can focus entirely on entertaining your guests."
   }
@@ -21,8 +21,8 @@ const features = [
 
 export default function WhatIsPartyCart() {
   return (
-    <section className="bg-white py-24 px-6 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-white py-20 px-6 overflow-hidden">
+      <div className="max-w-6xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,13 +65,13 @@ export default function WhatIsPartyCart() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
               whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(200,134,26,0.15)' }}
-              className="bg-white rounded-2xl p-8 md:p-10 border-t-4 border-t-accent-gold shadow-card transition-all duration-300"
+              className="bg-white rounded-2xl pt-6 px-6 pb-8 md:px-8 md:pb-10 border-t-2 border-t-[#C89B3C] shadow-card transition-all duration-300"
             >
-              <div className="mb-6 bg-bg-secondary w-16 h-16 rounded-2xl flex items-center justify-center">
+              <div className="mb-6 bg-[#f5f0e8] w-10 h-10 rounded-xl flex items-center justify-center">
                 {feature.icon}
               </div>
               <h3 className="font-display text-2xl font-bold text-text-primary mb-4">{feature.title}</h3>
-              <p className="font-sans text-text-muted leading-relaxed text-[17px]">
+              <p className="font-sans text-sm text-text-muted leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>

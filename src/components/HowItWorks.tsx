@@ -3,10 +3,10 @@ import { useRef } from 'react';
 import { Download, ShoppingBag, Utensils, PartyPopper } from 'lucide-react';
 
 const steps = [
-  { num: "01", label: "Select Cuisine & Date", icon: <Utensils size={24} className="text-accent-gold" /> },
-  { num: "02", label: "Customize Menu", icon: <PartyPopper size={24} className="text-accent-gold" /> },
-  { num: "03", label: "Place Order", icon: <ShoppingBag size={24} className="text-accent-gold" /> },
-  { num: "04", label: "Enjoy the Party", icon: <PartyPopper size={24} className="text-accent-gold" /> }
+  { num: "01", label: "Select Cuisine & Date", icon: <Utensils className="w-8 h-8 text-[#C89B3C]" /> },
+  { num: "02", label: "Customize Menu", icon: <PartyPopper className="w-8 h-8 text-[#C89B3C]" /> },
+  { num: "03", label: "Place Order", icon: <ShoppingBag className="w-8 h-8 text-[#C89B3C]" /> },
+  { num: "04", label: "Enjoy the Party", icon: <PartyPopper className="w-8 h-8 text-[#C89B3C]" /> }
 ];
 
 export default function HowItWorks() {
@@ -19,7 +19,7 @@ export default function HowItWorks() {
   const lineWidth = useTransform(scrollYProgress, [0.1, 0.7], ["0%", "85%"]);
 
   return (
-    <section className="bg-bg-dark py-24 px-6 overflow-hidden relative" id="how-it-works" ref={containerRef}>
+    <section className="bg-bg-dark py-20 px-6 overflow-hidden relative" id="how-it-works" ref={containerRef}>
       {/* Real Celebration Background Image at 15% opacity */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none"
@@ -29,7 +29,7 @@ export default function HowItWorks() {
         }}
       />
       
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,11 +45,10 @@ export default function HowItWorks() {
         {/* Desktop Horizontal Timeline */}
         <div className="relative mb-24 hidden md:block px-12">
           {/* Main Track Line */}
-          <div className="absolute top-1/2 left-[10%] right-[10%] h-[2px] bg-white/10 -translate-y-1/2" />
+          <div className="absolute top-1/2 left-10 right-10 border-t-2 border-[#C89B3C]/60 -translate-y-1/2" />
           
-          {/* Progress Line */}
           <motion.div 
-            className="absolute top-1/2 left-[10%] h-[2px] bg-accent-gold -translate-y-1/2 origin-left"
+            className="absolute top-1/2 left-10 border-t-2 border-[#C89B3C] -translate-y-1/2 origin-left z-0"
             style={{ width: lineWidth }}
           />
           
@@ -65,8 +64,8 @@ export default function HowItWorks() {
                 >
                   {step.num}
                 </motion.div>
-                <div className="mb-4">{step.icon}</div>
-                <p className="font-sans text-white text-xl font-bold px-4">{step.label}</p>
+                <div className="mb-4 text-[#C89B3C]">{step.icon}</div>
+                <p className="font-sans text-sm font-semibold text-white text-center px-4">{step.label}</p>
               </div>
             ))}
           </div>
@@ -86,8 +85,8 @@ export default function HowItWorks() {
               <div className="w-16 h-16 rounded-full border-4 border-accent-gold bg-bg-dark flex items-center justify-center font-display text-white text-2xl font-bold mb-4 shadow-lg">
                 {step.num}
               </div>
-              <div className="mb-3">{step.icon}</div>
-              <p className="font-sans text-white text-lg font-bold text-center">{step.label}</p>
+              <div className="mb-3 text-[#C89B3C]">{step.icon}</div>
+              <p className="font-sans text-sm font-semibold text-white text-center">{step.label}</p>
             </motion.div>
           ))}
         </div>

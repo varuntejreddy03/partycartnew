@@ -115,7 +115,7 @@ export default function Hero() {
         }}
       />
       
-      <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-[1.2fr_1fr] gap-10 md:gap-12 items-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 grid lg:grid-cols-[1.2fr_1fr] gap-10 md:gap-12 items-center">
         {/* Left Side: Content */}
         <motion.div
            variants={containerVariants}
@@ -129,10 +129,10 @@ export default function Hero() {
           </motion.div>
 
           <motion.h1 variants={itemVariants} className="mb-6 md:mb-8">
-            <span className="font-brand text-text-primary text-[clamp(56px,8vw,80px)] font-bold block leading-[0.8] tracking-tight">
+            <span className="font-brand text-text-primary text-4xl md:text-6xl font-bold block leading-[0.8] tracking-tight">
               PartyCart
             </span>
-            <span className="font-accent font-semibold italic text-[clamp(24px,3vw,36px)] text-accent-gold block tracking-[0.02em] mt-6 leading-tight max-w-lg">
+            <span className="font-accent font-semibold italic text-2xl text-accent-gold block tracking-[0.02em] mt-6 leading-tight max-w-lg">
               Hyderabad's Premium Party Food Provider
             </span>
           </motion.h1>
@@ -157,15 +157,15 @@ export default function Hero() {
             </button>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="flex gap-8 md:gap-12">
+          <motion.div variants={itemVariants} className="flex gap-12">
              {[
                { val: "100+", label: "Master Chefs" },
                { val: "4.9/5", label: "Client Rating" },
                { val: "10K+", label: "Events Served" }
              ].map((stat, i) => (
                <div key={i} className="flex flex-col">
-                  <span className="font-brand text-xl text-text-primary mb-1">{stat.val}</span>
-                  <span className="micro-label text-[9px] opacity-60 tracking-wider font-bold">{stat.label}</span>
+                  <span className="font-brand text-2xl font-bold text-text-primary mb-1">{stat.val}</span>
+                  <span className="text-xs tracking-widest uppercase text-gray-500">{stat.label}</span>
                </div>
              ))}
           </motion.div>
@@ -241,7 +241,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ type: 'spring', damping: 15, delay: 1 }}
-              className="absolute bottom-20 -right-4 z-30 bg-white p-4 rounded-2xl shadow-xl border border-border-warm flex flex-col items-center animate-float whitespace-nowrap"
+              className="absolute bottom-20 right-0 z-30 bg-white p-4 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.15)] border border-border-warm flex flex-col items-center animate-float whitespace-nowrap"
             >
               <div className="flex text-accent-gold mb-1 gap-0.5">
                 {[...Array(5)].map((_, i) => (

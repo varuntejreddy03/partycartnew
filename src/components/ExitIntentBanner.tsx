@@ -33,7 +33,7 @@ export default function ExitIntentBanner() {
            transition={{ duration: 0.5, ease: "easeOut" }}
            className="fixed top-0 left-0 right-0 z-[110] bg-accent-gold-light border-b-4 border-accent-gold p-4 md:p-6 shadow-2xl"
         >
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
              <div className="flex items-center gap-4 text-bg-dark">
                 <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-accent-gold shadow-lg shrink-0">
                    <Gift size={24} />
