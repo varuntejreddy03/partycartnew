@@ -37,6 +37,7 @@ export default function SignatureCuisines() {
   const [visibleCount, setVisibleCount] = useState(6);
   const [categories, setCategories] = useState<Category[]>([]);
   const [menuLoading, setMenuLoading] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
 
   useEffect(() => {
     let mounted = true;
@@ -87,7 +88,27 @@ export default function SignatureCuisines() {
     setVisibleCount(6);
   }, [activeFilter, searchTerm]);
 
-  const handleOrder = () => window.location.href = "https://yumzy.page.link/UfaY";
+  const handleOrder = () => window.open("https://order.yumzy.in", "_blank", "noopener,noreferrer");
+
+  useEffect(() => {
+    if (!selectedCategory) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setSelectedCategory(null);
+      }
+    };
+
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedCategory]);
 
   return (
     <section className="bg-bg-primary py-16 md:py-24 px-6 overflow-hidden" id="cuisines">
@@ -206,7 +227,7 @@ export default function SignatureCuisines() {
                         </a>
                       </div>
                       <div className="flex gap-2">
-                         <button onClick={handleOrder} className="bg-white border-2 border-accent-gold text-accent-gold font-body font-black px-5 py-3 rounded-full hover:bg-accent-gold hover:text-white transition-all duration-500 text-[9px] uppercase tracking-widest active:scale-95">
+                         <button onClick={() => setSelectedCategory(cat)} className="bg-white border-2 border-accent-gold text-accent-gold font-body font-black px-5 py-3 rounded-full hover:bg-accent-gold hover:text-white transition-all duration-500 text-[9px] uppercase tracking-widest active:scale-95">
                             Menu
                          </button>
                          <button onClick={handleOrder} className="bg-text-primary text-white font-body font-black px-6 py-3 rounded-full hover:bg-accent-gold transition-all duration-500 text-[9px] uppercase tracking-widest shadow-lg active:scale-95">
@@ -219,6 +240,94 @@ export default function SignatureCuisines() {
            ))}
            </AnimatePresence>
         </div>
+
+        <AnimatePresence>
+          {selectedCategory && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[120] bg-black/60 backdrop-blur-md px-4 py-6 sm:px-6 flex items-end sm:items-center justify-center"
+              onClick={() => setSelectedCategory(null)}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 30, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 30, scale: 0.98 }}
+                transition={{ type: 'spring', damping: 28, stiffness: 240 }}
+                onClick={(event) => event.stopPropagation()}
+                className="relative w-full max-w-5xl max-h-[88vh] overflow-hidden rounded-[32px] bg-[#FFFDF7] shadow-[0_30px_100px_rgba(0,0,0,0.35)] border border-white flex flex-col"
+              >
+                <div className="p-5 md:p-8 border-b border-[#E8D5B7] bg-gradient-to-r from-[#FFF8EA] via-white to-[#FFFDF7]">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="max-w-3xl">
+                      <p className="text-[11px] md:text-xs font-black uppercase tracking-[0.35em] text-[#9B8560] mb-3">Full Menu</p>
+                      <h3 className="font-brand text-4xl md:text-5xl text-[#1A1208] font-bold leading-[0.9]">
+                        {selectedCategory.title}
+                      </h3>
+                      <p className="font-body text-base md:text-lg text-[#5C4A1E] mt-3 max-w-2xl leading-relaxed">
+                        {selectedCategory.tagline}
+                      </p>
+                    </div>
+                    {selectedCategory.badge && (
+                      <span className="px-4 py-2 rounded-full bg-[#FFF3D7] text-[#A8843A] text-xs md:text-sm font-body font-semibold whitespace-nowrap border border-[#E8C97A] shadow-sm">
+                        {selectedCategory.badge}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="overflow-y-auto p-5 md:p-8 space-y-4 md:space-y-5 flex-1">
+                  {selectedCategory.items.map((dish, index) => (
+                    <div key={`${selectedCategory.id}-${dish.name}-${index}`} className="flex items-start gap-4 rounded-[24px] border border-[#F0E2C8] bg-white p-4 md:p-5 shadow-[0_8px_20px_rgba(26,18,8,0.04)]">
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl overflow-hidden bg-[#FFF8F0] flex-shrink-0 border border-[#E8D5B7] shadow-sm">
+                        <img
+                          src={dish.imageUrl || "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=100"}
+                          alt={dish.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="min-w-0">
+                            <h4 className="font-brand text-xl md:text-2xl text-[#1A1208] font-bold leading-tight">{dish.name}</h4>
+                            <p className="font-body text-sm md:text-[15px] text-[#5C4A1E] mt-2 leading-relaxed line-clamp-2 md:line-clamp-3">{dish.description}</p>
+                          </div>
+                          <div className="text-right shrink-0">
+                            {dish.price != null && (
+                              <div className="font-brand text-2xl md:text-3xl text-[#C8920A] font-bold leading-none">₹{dish.price.toLocaleString()}</div>
+                            )}
+                            <div className="mt-2 inline-flex items-center rounded-full bg-[#FFF3D7] px-3 py-1.5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-[#9B8560] border border-[#E8C97A]/70">
+                              {dish.isVeg ? 'Veg' : 'Non-Veg'}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="border-t border-[#E8D5B7] bg-[#FFFDF7] px-5 py-4 md:px-8 md:py-5 flex items-center justify-between gap-3">
+                  <a
+                    href="https://order.yumzy.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-full border border-[#A8843A] px-5 py-2.5 text-sm md:text-base font-body font-semibold text-[#A8843A] hover:bg-[#FFF8F0] transition-colors"
+                  >
+                    Visit Website
+                  </a>
+
+                  <button
+                    onClick={() => setSelectedCategory(null)}
+                    className="rounded-full bg-[#1A1208] px-5 py-2.5 text-sm md:text-base font-body font-semibold text-white hover:bg-[#2b2015] transition-colors"
+                  >
+                    Close Menu
+                  </button>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {visibleCount < filtered.length && (
           <div className="flex justify-center mt-20">

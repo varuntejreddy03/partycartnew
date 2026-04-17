@@ -33,7 +33,7 @@ const offerings = [
 ];
 
 export default function WhatWeOffer() {
-  const handleOrder = () => window.location.href = "https://yumzy.page.link/UfaY";
+  const handleOrder = () => window.open("https://order.yumzy.in", "_blank", "noopener,noreferrer");
 
   return (
     <section className="bg-bg-secondary py-16 md:py-28 px-6 relative overflow-hidden" id="offer">

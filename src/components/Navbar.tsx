@@ -32,7 +32,7 @@ export default function Navbar() {
   }, []);
 
   const handleOrder = () => {
-    window.location.href = "https://yumzy.page.link/UfaY";
+    window.location.href = "/order";
   };
 
   return (

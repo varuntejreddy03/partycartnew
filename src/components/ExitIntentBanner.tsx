@@ -19,7 +19,7 @@ export default function ExitIntentBanner() {
   }, [dismissed, showBanner]);
 
   const handleOrder = () => {
-    window.location.href = "https://yumzy.page.link/UfaY";
+    window.open("https://order.yumzy.in", "_blank", "noopener,noreferrer");
     setShowBanner(false);
   };
 

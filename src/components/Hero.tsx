@@ -2,6 +2,28 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
 
+const fallbackImage = `data:image/svg+xml;utf8,${encodeURIComponent(
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+    <defs>
+      <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+        <stop offset="0%" stop-color="#3b2a10" />
+        <stop offset="100%" stop-color="#a8843a" />
+      </linearGradient>
+    </defs>
+    <rect width="1200" height="800" fill="url(#g)" />
+    <circle cx="280" cy="220" r="170" fill="#ffffff22" />
+    <circle cx="930" cy="620" r="220" fill="#00000022" />
+    <text x="50%" y="46%" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="64" font-weight="700">PartyCart</text>
+    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#f5dfb0" font-family="Arial, sans-serif" font-size="30" letter-spacing="4">PREMIUM CATERING</text>
+  </svg>`
+)}`;
+
+const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+  if (e.currentTarget.dataset.fallbackApplied === 'true') return;
+  e.currentTarget.dataset.fallbackApplied = 'true';
+  e.currentTarget.src = fallbackImage;
+};
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -23,9 +45,26 @@ const itemVariants = {
 };
 
 const heroImages = [
-  { url: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1000", title: "Authentic Legacy" },
-  { url: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=1000", title: "Master Craft" },
-  { url: "https://images.unsplash.com/photo-1519671482749-fd09be4cce4e?w=1000", title: "Grand Celebration" }
+  {
+    url: "https://images.unsplash.com/photo-1519671482749-fd09be4cce4e?w=1000",
+    title: "Grand Celebration",
+    zIndex: 0
+  },
+  {
+    url: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1000",
+    title: "Authentic Legacy",
+    zIndex: 1
+  },
+  {
+    url: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=1000",
+    title: "Master Craft",
+    zIndex: 3
+  },
+  {
+    url: "https://images.unsplash.com/photo-1555244162-803834f70033?w=1000",
+    title: "Royal Feast",
+    zIndex: 2
+  }
 ];
 
 export default function Hero() {
@@ -38,7 +77,14 @@ export default function Hero() {
   const cardsRotate = useTransform(scrollY, [0, 500], [0, -10]);
 
   const handleOrder = () => {
-    window.location.href = "https://yumzy.page.link/UfaY";
+    window.open("https://order.yumzy.in", "_blank", "noopener,noreferrer");
+  };
+
+  const handleExploreMenus = () => {
+    const menuSection = document.getElementById('cuisines');
+    if (menuSection) {
+      menuSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   return (
@@ -51,6 +97,7 @@ export default function Hero() {
         <img 
           src="https://images.unsplash.com/photo-1555244162-803834f70033?w=800" 
           alt="Luxury Catering" 
+          onError={handleImageError}
           className="w-full h-full object-cover opacity-20 scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/95 via-bg-primary/80 to-bg-primary" />
@@ -102,7 +149,10 @@ export default function Hero() {
               <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
               Order for your party <ArrowRight className="group-hover:translate-x-2 transition-transform duration-500" />
             </button>
-            <button className="px-8 py-5 rounded-full font-sans font-bold text-text-primary border-2 border-border-warm hover:border-accent-gold hover:bg-bg-secondary transition-all duration-500 text-sm xl:text-base active:scale-95 w-full md:w-auto">
+            <button
+              onClick={handleExploreMenus}
+              className="px-8 py-5 rounded-full font-sans font-bold text-text-primary border-2 border-border-warm hover:border-accent-gold hover:bg-bg-secondary transition-all duration-500 text-sm xl:text-base active:scale-95 w-full md:w-auto"
+            >
               Explore Menus
             </button>
           </motion.div>
@@ -136,15 +186,15 @@ export default function Hero() {
                     opacity: 1, 
                     scale: 1, 
                     y: 0,
-                    x: i * 20 - 20,
-                    rotate: i * 6 - 6,
-                    zIndex: i
+                    x: i * 18 - 22,
+                    rotate: i * 5 - 8,
+                    zIndex: img.zIndex
                   }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.2, type: "spring", damping: 15 }}
                   className="absolute w-[260px] h-[360px] rounded-[40px] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.2)] border-[6px] border-white"
                 >
-                  <img src={img.url} alt={img.title} className="w-full h-full object-cover" />
+                  <img src={img.url} alt={img.title} onError={handleImageError} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6">
                     <p className="text-white text-[10px] font-black uppercase tracking-[0.2em] mb-1">{img.title}</p>
@@ -166,6 +216,7 @@ export default function Hero() {
               <img 
                 src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800" 
                 alt="Dum Biryani" 
+                onError={handleImageError}
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
             </motion.div>
@@ -180,6 +231,7 @@ export default function Hero() {
               <img 
                 src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600" 
                 alt="Party setup" 
+                onError={handleImageError}
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
             </motion.div>

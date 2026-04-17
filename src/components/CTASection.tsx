@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Download, ShoppingBag } from 'lucide-react';
 
 export default function CTASection() {
-  const handleOrder = () => window.location.href = "https://yumzy.page.link/UfaY";
+  const handleOrder = () => window.open("https://order.yumzy.in", "_blank", "noopener,noreferrer");
 
   return (
     <section className="bg-accent-gold py-24 px-6 relative overflow-hidden">
@@ -57,7 +57,7 @@ export default function CTASection() {
               onClick={handleOrder}
               className="bg-bg-dark text-white font-sans font-bold px-10 py-5 rounded-full flex items-center justify-center gap-3 shadow-xl hover-sweep text-lg"
             >
-              <Download size={24} /> Get The App
+              <Download size={24} /> Order Online
             </motion.button>
             <motion.button 
               whileHover={{ scale: 1.05, shadow: "0 20px 40px rgba(0,0,0,0.1)" }}
